@@ -1,0 +1,10 @@
+body {
+  background-color: lightgrey;
+  position: relative;
+  margin: 5% 5%;
+  text-align: center;
+}
+
+#home-button {
+  position: absolute;
+}

@@ -1,0 +1,59 @@
+body {
+  text-align: left;
+}
+
+header {
+  position: relative;
+  margin: auto 0 auto 0;
+  height: 214px;
+}
+
+#social-links {
+  position: absolute;
+  text-align: center;
+  width: 33%;
+  height: inherit;
+}
+
+#social-links div {
+  position: relative;
+  top: 50%;
+}
+
+#social-links div a {
+  position: relative;
+  display: inline-block;
+  margin-top: -50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#portrait {
+  position: absolute;
+  left: 33%;
+  width: 33%;
+  height: inherit;
+}
+
+#portrait img {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 225px;
+  height: 214px;
+}
+
+#site-links {
+  position: absolute;
+  text-align: center;
+  left: 67%;
+  width: 33%;
+  height: inherit;
+}
+
+#site-links form {
+  position: relative;
+  display: block;
+  margin: 10% auto auto auto;
+}
