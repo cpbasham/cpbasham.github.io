@@ -2,22 +2,83 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <title>~~~~~~~~~~~~~~~</title>
+  <title>Arrays and Hashes</title>
   <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
   <link rel="stylesheet" type="text/css" href="../stylesheets/blog-post.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-t3.css">
 </head>
 
 <body>
   <header>
-    <form id="home-button" action="../index.html"><input type="submit" value="Home"></form>
-    <h1>~~~~~~~~~~~~~~~</h1>
-    <h3>~~~~~~~~~~~~~~~</h3>
-    <h5>~~~~~~~~~~~~~~~</h5>
+    <div class="nav-bar">
+      <form id="home-button" class="nav-button" action="../index.html"><input type="submit" value="Home"></form>
+      <form id="blog-button" class="nav-button" action="index.html"><input type="submit" value="Blogs"></form>
+    </div>
+    <h1>Arrays and Hashes</h1>
+    <h3>A Quick Intro</h3>
+    <h5>6/7/15</h5>
   </header>
 
-  <section>
-    <p>~~~~~~~~</p>
-  </section>
+  <div class='two-column'>
+    <section class='c1'>
+      <h3>Arrays</h3>
+      <p>
+        Arrays in Ruby are ordered collections of objects.  They are indexed by integers counting up from 0.<br><br>
+
+        Brackets are used both for indexing and for representing/printing arrays:<br>
+        <span class='code'>
+          arr = ["zero", "one", "two", "three"]<br>
+          puts arr[2] <em class='comment'>=> "two"</em>
+        </span><br>
+        You can throw any data types into Ruby arrays, including more arrays!<br>
+        <span class='code'>
+          arr = [0, 1, 2.2, :three, ['another', 'array'], "FIVE"]<br>
+          fifth_element = arr[4] <em class='comment'># fifth_element = ['another', 'array']</em>
+        </span><br>
+        To create an empty array, you can use empty brackets:<br>
+        <span class='code'>empty = []</span><br>
+        Alternatively, you can use an array constructor.  Using the constructor you can even automatically fill the array with a set value:<br>
+        <span class='code'>
+          empty = Array.new <em class='comment'>=> []</em><br>
+          zeros = Array.new(5, 0) <em class='comment'>=> [0, 0, 0, 0, 0]</em>
+        </span><br>
+        There are some other cool things about arrays, but I'll leave them for a different post.
+      </p>
+    </section>
+
+    <section class='c2'>
+      <h3>Hashes</h3>
+      <p>
+        Hashes are ordered collections of objects as well, but their ordering is not as simple as that of arrays and is generally disregarded.  Instead hashes are used because the index (known as a <em>key</em>) can be any object, rather than just an integer.<br><br>
+
+        Just like in arrays, brackets are used for indexing in hashes.  However, when being represented/printed, hashes are wrapped in curly braces and the key-value pairs are shown together, connected by '=>':<br>
+        <span class='code'>
+          my_hash = {:gringo => true, 99 => "problems", "age" => 22.5}
+          puts my_hash["age"] <em class='comment'>=> 22.5</em>
+          puts my_hash[:gringo] <em class='comment'>=> true</em>
+        </span><br>
+        As partially demonstrated above, you can put any type of object in a hash as either the key or the value.<br>
+        To create an empty hash, you can use empty curly braces or a constructor:<br>
+        <span class='code'>
+          empty = {}<br>
+          empty = Hash.new <em class='comment'># equivalent</em>
+        </span><br>
+        Also, hashes come with a default value of <em>nil</em> (returned when a value is requested for a non-existent key).  You can change this by explicitly setting the default or by specifying this in the constructor:<br>
+        <span class='code'>
+          my_hash = Hash.new("DEFAULT")<br>
+          <em class='comment'># or after the hash is created...</em><br>
+          my_hash.default = "DEFAULT"<br>
+          puts my_hash["nonexistent key"] <em class='comment'>=> "DEFAULT"</em>
+        </span><br>
+      </p>
+    </section>
+  </div>
+
+  <section class='after'>
+      <p>
+        So why would you choose to use one over the other?  Well, part of the tradeoff is speed vs flexibility.  Arrays are generally more efficient/faster than hashes, at the expense of only using integer indices.  Hashes take a slight performance hit in order to gain more possible usages.  In the end, if you need an ordered list or you see another good reason to use an array, then definitely stick to the array.  But don't force it.  I know from experience that the tiny gains from using arrays aren't worth the lack of readability brought on by trying to force functionality into the wrong data structure.
+      </p>
+    </section>
 
 </body>
 </html>
