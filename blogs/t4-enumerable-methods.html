@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Enumerable Methods – Map</title>
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog-post.css">
+</head>
+
+<body>
+  <header>
+    <div class="nav-bar">
+      <form id="home-button" class="nav-button" action="../index.html"><input type="submit" value="Home"></form>
+      <form id="blog-button" class="nav-button" action="index.html"><input type="submit" value="Blogs"></form>
+    </div>
+    <h1>Enumerable Methods</h1>
+    <h3>Map</h3>
+    <h5>6/18/15</h5>
+  </header>
+
+  <section>
+    <p>Map is one higher-order function in what many people consider the functional programming trifecta (map, filter, fold).  In Ruby this method is known as both Enumerable#map and Enumerable#collect (the 'collect' alias coming from the language Smalltalk).  The function takes in a list of values (in this case an Enumerable) and returns a copy of the list of values, with the given block applied to each element in the Enumerable.  For example, you can easily square every number in an enumerable this way:<br>
+      <span class='code'>
+        (1..5).map{ | i | i * i }<em class='comment'>=&gt; [1, 4, 9, 16, 25]</em>
+      </span><br>
+    This is especially useful when we want to create a modified copy of an array.  It is also probably the most elegant way to apply some function to every element in an Enumerable (using map!):<br>
+      <span class='code'>
+        x = ["one", "two", "three", "four", "five"]<br>
+        x.map!{ | s | s.upcase }<br>
+        puts x.to_s<em class='comment'>=&gt; ["ONE", "TWO", "THREE", "FOUR", "FIVE"]</em>
+      </span><br>
+    Note that while #map and #each can be considered similar in some ways, #map returns a new array, whereas #each (along with #map!) returns the same array.
+  </section>
+
+
+
+</body>
+</html>
