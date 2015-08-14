@@ -8,6 +8,11 @@ header {
   height: 214px;
 }
 
+h1 {
+  padding-top: 40px;
+  text-align: center;
+}
+
 #social-links {
   position: absolute;
   text-align: center;
