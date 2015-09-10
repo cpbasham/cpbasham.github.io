@@ -48,3 +48,9 @@ em.comment {
   color: green;
   margin-left: 1em;
 }
+
+canvas {
+  display: block;
+  margin: 0 auto;
+  background-color: black;
+}
