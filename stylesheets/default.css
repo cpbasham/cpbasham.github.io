@@ -51,6 +51,17 @@ em.comment {
 
 canvas {
   display: block;
+  /*display: none;*/
   margin: 0 auto;
-  background-color: black;
+  /*background-color: black;*/
+  /*border: 1px solid red;*/
+  height: 365px;
+  width: 640px;
+}
+
+button.play {
+  display: block;
+  margin: 0 auto;
+  height: 365px;
+  width: 640px;
 }

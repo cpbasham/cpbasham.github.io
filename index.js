@@ -1,4 +1,6 @@
 // $('canvas').on('click', function() {
 //   $(this).off();
-//   $.getScript("extra/processing.min.js");
+// console.log("HEY");
+var that = this;
+$.getScript("processing.min.js");
 // });
