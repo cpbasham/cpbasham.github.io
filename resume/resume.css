@@ -1,5 +1,21 @@
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+.clearfix {
+  overflow: auto;
+  zoom: 1; }
+
 .cl-both {
   clear: both; }
+
+.pos-a {
+  position: absolute; }
+
+.pos-r {
+  position: relative; }
 
 .d-ib {
   display: block; }
@@ -7,23 +23,11 @@
 .d-ib {
   display: inline-block; }
 
-.w-25 {
-  width: 25%; }
+.l-0 {
+  left: 0; }
 
-.w-33 {
-  width: 33%; }
-
-.w-34 {
-  width: 34%; }
-
-.w-50 {
-  width: 50%; }
-
-.w-75 {
-  width: 75%; }
-
-.w-85 {
-  width: 85%; }
+.l-5p {
+  left: 5%; }
 
 .w-95 {
   width: 95%; }
@@ -43,29 +47,17 @@
 .ta-r {
   text-align: right; }
 
-.pb-1 {
-  padding-bottom: 1em; }
+.pb-1-5 {
+  padding-bottom: 1.5em; }
 
 .pl-1 {
   padding-left: 1em; }
 
-.pl-2 {
-  padding-left: 2em; }
-
-.pl-3 {
-  padding-left: 3em; }
-
 .pr-1 {
   padding-right: 1em; }
 
-.pr-2 {
-  padding-right: 2em; }
-
 .pr-2-5 {
   padding-right: 2.5em; }
-
-.pr-3 {
-  padding-right: 3em; }
 
 .m-0 {
   margin: 0; }
@@ -94,6 +86,9 @@
 .ml-2 {
   margin-left: 2em; }
 
+.ml-5p {
+  margin-left: 5%; }
+
 .m-c {
   margin-left: auto;
   margin-right: auto; }
@@ -103,16 +98,6 @@
 
 .of-a {
   overflow: auto; }
-
-html {
-  box-sizing: border-box; }
-
-*, *:before, *:after {
-  box-sizing: inherit; }
-
-.clearfix {
-  overflow: auto;
-  zoom: 1; }
 
 body {
   background-color: black; }
@@ -179,11 +164,9 @@ em {
   background-color: #ddd; }
 
 #experience {
-  width: 95%;
-  margin: auto; }
+  width: 95%; }
   #experience h4 {
     display: inline-block;
-    margin: 0 2em 0 0;
-    text-align: left; }
+    margin: 0; }
 
 /*# sourceMappingURL=resume.css.map */
