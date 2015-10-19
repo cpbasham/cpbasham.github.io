@@ -8,6 +8,9 @@
 .ta-c {
   text-align: center; }
 
+.fl-l {
+  float: left; }
+
 #page {
   position: absolute;
   top: 0;
