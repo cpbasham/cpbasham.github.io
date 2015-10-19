@@ -1,0 +1,145 @@
+// * {border: 1px solid red !important;}
+
+.cl-both { clear: both; }
+
+.pos-a { position: absolute; }
+.pos-r { position: relative; }
+
+.d-ib { display: block; }
+.d-ib { display: inline-block; }
+
+.l-0 { left: 0; }
+.l-5p { left: 5%; }
+
+.w-95 { width: 95%; }
+.h-80px { height: 80px; }
+
+.fl-l { float: left; }
+.fl-r { float: right; }
+
+.ta-c { text-align: center; }
+.ta-l { text-align: left; }
+.ta-r { text-align: right; }
+
+.pb-1-5 { padding-bottom: 1.5em; }
+.pl-1 { padding-left: 1em; }
+.pr-1 { padding-right: 1em; }
+.pr-2-5 { padding-right: 2.5em; }
+
+
+.m-0 { margin: 0; }
+.mt-0   { margin-top: 0; }
+.mt-0-5   { margin-top: 0.5em; }
+.mt-1-5   { margin-top: 1.5em; }
+.mt-2   { margin-top: 2em; }
+.mr-2   { margin-right: 2em; }
+.mb-0   { margin-bottom: 0; }
+.mb-0-5 { margin-bottom: 0.5em; }
+.ml-2   { margin-left: 2em; }
+.ml-5p { margin-left: 5%; }
+.m-c { margin-left: auto; margin-right: auto; }
+
+
+.va-t { vertical-align: top; }
+.of-a { overflow: auto; }
+
+
+
+body {
+  // background-color: grey;
+  background-color: black;
+
+  &>#page {
+    position: relative;
+    width: 8.5in;
+    height: 11in;
+    margin: .5in auto;
+    background-color: #ccc;
+  }
+}
+
+h1, h3, h4, span {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: blue;
+  &:active {
+    color: darken(blue, 25%);
+  }
+}
+
+em {
+  font-weight: bold;
+  font-style: normal;
+}
+
+.header {
+  background-color: #ddd;
+  padding: .1in;
+
+  & #name {
+    display: block;
+    width: 66%;
+    float: left;
+  }
+  & #contact-info {
+    display: inline-block;
+    width: 34%;
+    float: right;
+    margin: .1in auto;
+    & * {
+      margin: 0 auto;
+    }
+  }
+  & #links {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+
+    & span {
+      display: inline-block;
+      width: 32.5%;
+    }
+  }
+}
+
+#main-container {
+  clear: both;
+  position: relative;
+
+  & img {
+    width: 144px;
+    height: 80px;
+  }
+
+  & .col-2-l {
+    width: 50%;
+    float: left;
+    padding-right: .15in;
+  }
+  & .col-2-r {
+    width: 50%;
+    float: right;
+    padding-left: .15in;
+  }
+
+  & ul {
+    text-align: left;
+  }
+}
+
+.projects {
+  background-color: #ddd;
+}
+
+#experience {
+  width: 95%;
+
+  & h4 {
+    display: inline-block;
+    margin: 0;
+    // margin: 0 2em 0 0;
+  }
+}

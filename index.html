@@ -3,55 +3,44 @@
 <head>
   <meta charset="utf-8"/>
   <title>Cameron P Basham's Site</title>
-  <link rel="stylesheet" type="text/css" href="stylesheets/default.css">
-  <link rel="stylesheet" type="text/css" href="stylesheets/home.css">
-  <script src="extra/jquery-1.11.3.min.js"></script>
-
-  <!-- // <script src="index.js"></script> -->
-  <script src="processing.min.js"></script>
+  <link rel="stylesheet" href="styles/normalize.min.css">
+  <link rel="stylesheet" href="styles/default.css">
+  <link rel="stylesheet" href="styles/home.css">
 </head>
 
 <body>
-  <header>
-
-
-    <div id="portrait">
-      <img alt="Portrait of Cameron" src="imgs/portrait.jpg" >
+  <div id="page">
+    <h1 class="ta-c">Cameron P. Basham</h1>
+    <div class="portrait">
+      <!-- <img alt="Portrait of Cameron" src="imgs/portrait.jpg" width="225px" height="214px"> -->
+      <img alt="Portrait of Cameron" src="imgs/portrait.jpg" width="338px" height="321px" class="d-b">
     </div>
+
+
+
+
+
 
     <div id="social-links">
-      <div>
-        <a href="https://www.linkedin.com/in/cpbasham">
-          <img class="social-link" alt="LinkedIn link" src="imgs/linkedin42.png">
-        </a>
-        <!--
-          <a href="https://twitter.com/cpbasham">
-            <img class="social-link" alt="Twitter link" src="imgs/twitter42.png">
-          </a>
-        -->
-        <a href="https://www.facebook.com/CameronPrestonBasham">
-          <img class="social-link" alt="Facebook link" src="imgs/facebook42.png">
-        </a>
-        <a href="https://github.com/cpbasham">
-          <img class="social-link" alt="GitHub link" src="imgs/github42.png">
-        </a>
-        <a href="https://www.google.com/+CameronPrestonBasham">
-          <img class="social-link" alt="Google+ link" src="imgs/google-plus42.png">
-        </a>
-      </div>
+      <a href="https://www.linkedin.com/in/cpbasham" class="social-link">
+        <img class="social-link-img" alt="LinkedIn link" src="imgs/social-circles/42/linkedin42.png">
+      </a>
+      <a href="https://twitter.com/cpbasham" class="social-link">
+        <img class="social-link-img" alt="Twitter link" src="imgs/social-circles/42/twitter42.png">
+      </a>
+      <!-- <a href="https://www.facebook.com/CameronPrestonBasham" class="social-link">
+        <img class="social-link-img" alt="Facebook link" src="imgs/social-circles/42/facebook42.png">
+      </a> -->
+      <a href="https://github.com/cpbasham" class="social-link">
+        <img class="social-link-img" alt="GitHub link" src="imgs/social-circles/42/github42.png">
+      </a>
+      <a href="https://www.google.com/+CameronPrestonBasham" class="social-link">
+        <img class="social-link-img" alt="Google+ link" src="imgs/social-circles/42/google-plus42.png">
+      </a>
     </div>
 
-    <div id="site-links">
-      <!-- <form action="blogs/index.html"><input type="submit" value="Blogs"></form> -->
-      <!-- <form action="#"><input type="submit" value="Projects"></form> -->
-      <!-- <form action="#"><input type="submit" value="Contact Me"></form> -->
-    </div>
-  </header>
-
-  <h1>This site is currently under construction.</h1>
-  <h3>In the mean time, let's get those fans going.</h3>
-
-  <canvas id="canvas" data-processing-sources="extra/Streamer/BG_Rect.pde extra/Streamer/Seeker_Grid.pde extra/Streamer/Vehicle.pde extra/Streamer/Streamer.pde"></canvas>
+    <div id="site-links"></div>
+  </div>
 
 </body>
 </html>

@@ -1,0 +1,30 @@
+.d-b {
+  display: block; }
+
+.m-c {
+  margin-left: auto;
+  margin-right: auto; }
+
+.ta-c {
+  text-align: center; }
+
+#page {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  background-color: #ccc; }
+
+.social-link {
+  display: inline-block;
+  width: 84px;
+  height: 84px;
+  text-decoration: none; }
+
+.social-link-img {
+  width: 84px;
+  height: 84px; }
+
+/*# sourceMappingURL=home.css.map */
