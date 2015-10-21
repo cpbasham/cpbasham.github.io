@@ -76,6 +76,9 @@
 .mb-0 {
   margin-bottom: 0; }
 
+.mb-0-25 {
+  margin-bottom: 0.25em; }
+
 .mb-0-5 {
   margin-bottom: 0.5em; }
 
@@ -95,7 +98,11 @@
 .of-a {
   overflow: auto; }
 
+.of-h {
+  overflow: hidden; }
+
 body {
+  font-family: georgia;
   background-color: black; }
   body > #page {
     position: relative;

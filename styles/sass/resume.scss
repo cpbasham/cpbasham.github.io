@@ -35,6 +35,7 @@
 .mt-2   { margin-top: 2em; }
 .mr-2   { margin-right: 2em; }
 .mb-0   { margin-bottom: 0; }
+.mb-0-25 { margin-bottom: 0.25em; }
 .mb-0-5 { margin-bottom: 0.5em; }
 .ml-2   { margin-left: 2em; }
 .ml-5p { margin-left: 5%; }
@@ -43,10 +44,12 @@
 
 .va-t { vertical-align: top; }
 .of-a { overflow: auto; }
+.of-h { overflow: hidden; }
 
 
 
 body {
+  font-family: georgia;
   // background-color: grey;
   background-color: black;
 
