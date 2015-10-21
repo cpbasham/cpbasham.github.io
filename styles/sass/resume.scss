@@ -5,7 +5,7 @@
 .pos-a { position: absolute; }
 .pos-r { position: relative; }
 
-.d-ib { display: block; }
+.d-b { display: block; }
 .d-ib { display: inline-block; }
 
 .l-0 { left: 0; }
@@ -30,6 +30,7 @@
 .m-0 { margin: 0; }
 .mt-0   { margin-top: 0; }
 .mt-0-5   { margin-top: 0.5em; }
+.mt-1   { margin-top: 1em; }
 .mt-1-5   { margin-top: 1.5em; }
 .mt-2   { margin-top: 2em; }
 .mr-2   { margin-right: 2em; }
@@ -136,10 +137,17 @@ em {
 
 #experience {
   width: 95%;
+}
 
-  & h4 {
-    display: inline-block;
-    margin: 0;
-    // margin: 0 2em 0 0;
-  }
+.header-date {
+  // font-style: italic;
+  font-size: .7em;
+  line-height: .7em;
+  display: block;
+  // position: absolute;
+  // white-space: nowrap;
+  // margin-left: 1em;
+  vertical-align: middle;
+  color: #d33;
+  margin: .2em auto;
 }

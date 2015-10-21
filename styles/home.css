@@ -17,8 +17,8 @@
   bottom: 0;
   left: 0;
   right: 0;
-  overflow: hidden;
-  background-color: #ccc; }
+  overflow: scroll;
+  background-color: #aaa; }
 
 .social-link {
   display: inline-block;
