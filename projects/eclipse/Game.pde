@@ -3,7 +3,7 @@ class Game {
   Player player;
   Target target;
 
-  Color background = new Color(0);
+  Color gameBackground = new Color(0);
 
   ArrayList<Ghost> ghosts = new ArrayList<Ghost>();
   
@@ -18,7 +18,7 @@ class Game {
   }
   
   void display() {
-    background(background.getColor());
+    background(gameBackground.getColor());
     player.display();
     target.display();
     for (Ghost g : ghosts) {
@@ -27,7 +27,7 @@ class Game {
   }
   
   void setBackground(Color c) {
-    background = c;
+    this.gameBackground = c;
   }
   
 }

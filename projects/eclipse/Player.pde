@@ -6,8 +6,8 @@ class Player extends Circle {
   
   Player(Circle c) {
     super(c.x, c.y, c.radius);
-    setFill(c.fill);
-    setStroke(c.stroke);
+    setFill(c.circleFill);
+    setStroke(c.circleStroke);
   }
   
   void update() {

@@ -3,23 +3,24 @@ class Circle {
   final int MAX_RADIUS_NEEDED = ceil(sqrt(sq(width) + sq(height)));
   
   float x, y, radius;
-  Color fill, stroke;
+  Color circleFill, circleStroke;
   
   Circle(float x, float y, float radius) {
     this.x = x;
     this.y = y;
     this.radius = radius;
-    this.fill = new Color(0);
-    this.stroke = null;
+    this.circleFill = new Color(255);
+    this.circleStroke = null;
+//    this.circleStroke = new Color(255);
   }
   
   void display() {
-    if (stroke == null) {
+    if (this.circleStroke == null) {
       noStroke();
     } else {
-      stroke(stroke.getColor());
+      stroke(this.circleStroke.getColor());
     }
-    fill(fill.getColor());
+    fill(this.circleFill.getColor());
     ellipse(x, y, radius*2, radius*2);
   }
   
@@ -32,12 +33,12 @@ class Circle {
     this.radius = radius;
   }
   
-  void setFill(Color fill) {
-    this.fill = fill;
+  void setFill(Color cFill) {
+    this.circleFill = cFill;
   }
   
-  void setStroke(Color stroke) {
-    this.stroke = stroke;
+  void setStroke(Color cStroke) {
+    this.circleStroke = cStroke;
   }
   
   float getLeftX() {

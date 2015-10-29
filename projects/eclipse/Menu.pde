@@ -23,8 +23,10 @@ class Menu {
     
     // Create button
     button = new Circle(width*7/10, height*7/10, height/4);
+    print(button.circleStroke);
     button.setFill(new Color(255));
     button.setStroke(new Color(0));
+    print(button.circleStroke);
     
     // Create player
     player = new Circle(width-button.x, button.y, button.radius+20);

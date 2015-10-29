@@ -48,9 +48,9 @@ void draw() {
       if (menu.player.encompassesScreen()) {
         display_mode = GAME;
         game = new Game();
-        game.setBackground(menu.player.fill);
+        game.setBackground(menu.player.circleFill);
         game.player = new Player(menu.button);
-        game.target = new Target(game.player, game.background);
+        game.target = new Target(game.player, game.gameBackground);
         menu.clearObjects();
       }
       break;
@@ -61,7 +61,7 @@ void draw() {
         nextPlayerRadius = game.player.radius;
         display_mode = TRANS_TWO;
         game.ghosts.add(new Ghost(game.player, game.target));
-        game.player.fill.a = 255;
+        game.player.circleFill.a = 255;
       } else {
         Ghost toRemove = null;
         for (Ghost g : game.ghosts) {
@@ -83,10 +83,10 @@ void draw() {
       game.display();
       if (game.player.encompassesScreen()) {
         display_mode = GAME;
-        game.setBackground(game.player.fill);
+        game.setBackground(game.player.circleFill);
         game.player = new Player(game.target);
         game.player.setRadius(nextPlayerRadius);
-        game.target = new Target(game.player, game.background);
+        game.target = new Target(game.player, game.gameBackground);
       }
       break;
     default:
