@@ -9,42 +9,60 @@
 </head>
 
 <body>
-  <div id="page">
-    <h1 class="ta-c">Cameron P. Basham</h1>
-    <div class="portrait">
-      <!-- <img alt="Portrait of Cameron" src="imgs/portrait.jpg" width="225px" height="214px"> -->
-      <img alt="Portrait of Cameron" src="imgs/portrait.jpg" width="338px" height="321px" class="d-b m-c">
-    </div>
-    <br>
+<div id="page">
+  <div id="sidebar-container">
+    <div id="sidebar" class="pb-10px">
+      <div class="portrait">
+        <img alt="Portrait of Cameron" src="imgs/portrait.jpg" width="225px" height="214px" class="d-b">
+        <!-- <img alt="Portrait of Cameron" src="imgs/portrait.jpg" width="338px" height="321px" class="d-b m-c"> -->
+      </div>
 
 
+      <div id="social-links" class="ta-c mt-15px">
+        <a href="https://www.linkedin.com/in/cpbasham" class="social-link">
+          <img class="social-link-img" alt="LinkedIn link" src="imgs/social-circles/42/linkedin42.png">
+        </a>
+        <a href="https://twitter.com/cpbasham" class="social-link">
+          <img class="social-link-img" alt="Twitter link" src="imgs/social-circles/42/twitter42.png">
+        </a>
+        <!-- <a href="https://www.facebook.com/CameronPrestonBasham" class="social-link">
+          <img class="social-link-img" alt="Facebook link" src="imgs/social-circles/42/facebook42.png">
+        </a> -->
+        <a href="https://github.com/cpbasham" class="social-link">
+          <img class="social-link-img" alt="GitHub link" src="imgs/social-circles/42/github42.png">
+        </a>
+        <!-- <a href="https://www.google.com/+CameronPrestonBasham" class="social-link">
+          <img class="social-link-img" alt="Google+ link" src="imgs/social-circles/42/google-plus42.png">
+        </a> -->
+      </div>
 
-
-
-
-    <div id="social-links" class="ta-c">
-      <a href="https://www.linkedin.com/in/cpbasham" class="social-link">
-        <img class="social-link-img" alt="LinkedIn link" src="imgs/social-circles/42/linkedin42.png">
-      </a>
-      <a href="https://twitter.com/cpbasham" class="social-link">
-        <img class="social-link-img" alt="Twitter link" src="imgs/social-circles/42/twitter42.png">
-      </a>
-      <!-- <a href="https://www.facebook.com/CameronPrestonBasham" class="social-link">
-        <img class="social-link-img" alt="Facebook link" src="imgs/social-circles/42/facebook42.png">
-      </a> -->
-      <a href="https://github.com/cpbasham" class="social-link">
-        <img class="social-link-img" alt="GitHub link" src="imgs/social-circles/42/github42.png">
-      </a>
-      <!-- <a href="https://www.google.com/+CameronPrestonBasham" class="social-link">
-        <img class="social-link-img" alt="Google+ link" src="imgs/social-circles/42/google-plus42.png">
-      </a> -->
-    </div>
-
-    <div id="site-links" class="ta-c">
-      <a href="/resume"><h1>Resume</h1></a>
-      <a href="/projects"><h1>Projects</h1></a>
+      <div id="site-links" class="ta-c">
+        <a class="d-b mt-10px" href="/resume">Resume</a>
+        <!-- <a class="d-b mt-10px mb-10px" href="/projects">Projects</a> -->
+      </div>
     </div>
   </div>
+
+  <div id="main-container" class="ta-c ml-20px">
+    <h1 class="mt-0">Cameron P. Basham</h1>
+
+    <h2 class="mb-0">Projects</h2>
+    <div class="project">
+      <h3 class="mt-0 mb-0-25em">Streamer</h3>
+      <img class="d-b --js-add-dynamic" src="/projects/imgs/thumbnails/streamer-static.gif" />
+      <a href="/projects/streamer">Demo Here</a><br>
+      (JavaScript translation via Processing.js)
+    </div>
+    <div class="project">
+      <h3 class="mt-0 mb-0-25em">Eclipse</h3>
+      <img class="d-b --js-add-dynamic" src="/projects/imgs/thumbnails/eclipse-static.gif" />
+      <a href="/projects/eclipse">Demo Here</a><br>
+      (JavaScript translation via Processing.js)
+    </div>
+  </div>
+</div>
+
+<script src="/js/thumbnail_gifs.js"></script>
 
 </body>
 </html>

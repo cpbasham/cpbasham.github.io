@@ -21,15 +21,17 @@ Seeker_Grid bg;
 ArrayList<Vehicle> vehicles;
 
 void setup() {
-  
+
   vehicles = new ArrayList<Vehicle>();
 //  size(1280, 730);
-  size(640, 365);
-  for (int i=0; i<10; i++) {
-    int s = vehicles.size();
-    Vehicle v = getRandomVehicle(6, 12, .2, .6);
-    vehicles.add(v);
-  }
+//  size(640, 365);
+//  size(960, 540);
+  size(960, 600);
+  // for (int i=0; i<10; i++) {
+  //   int s = vehicles.size();
+  //   Vehicle v = getRandomVehicle(6, 12, .2, .6);
+  //   vehicles.add(v);
+  // }
   square_setup(64, 38);
 //    square_setup(20);
   square_draw_init();
@@ -70,7 +72,7 @@ void square_draw_init() {
 }
 
 void draw() {
-  
+
   PVector mouse = new PVector(mouseX, mouseY);
 
   if (scrollTimeStep(25)) {
@@ -83,9 +85,9 @@ void draw() {
   }
   BG_Rect newPlayerRect = bg.getRectAtCoords(mouseX, mouseY);
   bg.drawRect(playerRect, PLAYER_RECT);
-  
+
   Vehicle toDelete = null;
-  
+
   for (Vehicle v : vehicles) {
     v.seek(mouse);
     v.update();
@@ -99,21 +101,21 @@ void draw() {
     }
   }
   vehicles.remove(toDelete);
-  
+
   bg.drawRect(playerRect, PLAYER_TRAIL);
   playerRect = newPlayerRect;
 //  }
-  
-  
+
+
   fill(25, 25, 150);
   fill(0);
   rect(0, height-40, 265, 40);
   fill(255);
   textSize(32);
-  text("Cameron Basham", 3, height-10);  
+  text("Cameron Basham", 3, height-10);
 }
 
-  
+
 // Requires scrollClock to be initialized
 boolean scrollTimeStep(int stepSize) {
   int currentTime = millis();
