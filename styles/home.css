@@ -13,6 +13,9 @@
 .mt-0 {
   margin-top: 0; }
 
+.mt-0-5em {
+  margin-top: 0.5em; }
+
 .mt-10px {
   margin-top: 10px; }
 
@@ -41,6 +44,9 @@ a {
   font-family: Times;
   color: blue; }
 
+html {
+  overflow: hidden; }
+
 #page {
   position: absolute;
   top: 0;
@@ -48,14 +54,14 @@ a {
   left: 0;
   right: 0;
   padding: 20px;
-  overflow: hidden;
-  background-color: #888; }
+  overflow: scroll;
+  background-color: #aaa; }
 
 #sidebar-container {
   float: left;
   margin-right: 20px; }
   #sidebar-container #sidebar {
-    background-color: #6f6f6f; }
+    background-color: #919191; }
     #sidebar-container #sidebar a {
       color: white; }
 
@@ -72,8 +78,8 @@ a {
 .project {
   display: inline-block;
   text-align: center;
-  padding-right: 20px;
-  padding-top: 10px; }
+  padding-right: 5%;
+  padding-left: 5%; }
   .project img {
     margin-left: auto;
     margin-right: auto; }
