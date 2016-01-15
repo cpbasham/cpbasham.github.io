@@ -117,7 +117,7 @@ body {
     position: relative;
     width: 8.5in;
     height: 11in;
-    margin: .5in auto;
+    margin: 0 auto;
     background-color: #ccc; }
 
 h1, h3, h4, span {
