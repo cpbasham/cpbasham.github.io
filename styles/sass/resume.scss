@@ -44,13 +44,15 @@
 .ml-5p { margin-left: 5%; }
 .m-c { margin-left: auto; margin-right: auto; }
 
+.c-highlight1 { color: red; }
+.c-highlight2 { color: blue; }
 
 .va-t { vertical-align: top; }
 .of-a { overflow: auto; }
 .of-h { overflow: hidden; }
 
 body {
-  font-family: georgia;
+  font-family: ‘Arial Narrow’, sans-serif;
   -moz-text-size-adjust: auto;
   -webkit-text-size-adjust: auto;
   -ms-text-size-adjust: auto;
@@ -66,6 +68,10 @@ body {
     // margin: 0 auto;
     background-color: #ccc;
   }
+}
+
+h1, h3, h4 {
+  font-family: Verdana, Geneva, sans-serif;
 }
 
 h1, h3, h4, span {
@@ -98,7 +104,7 @@ em {
     display: inline-block;
     width: 34%;
     float: right;
-    margin: .1in auto;
+    margin: .2in auto;
     & * {
       margin: 0 auto;
     }

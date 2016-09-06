@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .cl-both {
   clear: both; }
 
@@ -101,6 +102,12 @@
   margin-left: auto;
   margin-right: auto; }
 
+.c-highlight1 {
+  color: red; }
+
+.c-highlight2 {
+  color: blue; }
+
 .va-t {
   vertical-align: top; }
 
@@ -111,7 +118,7 @@
   overflow: hidden; }
 
 body {
-  font-family: georgia;
+  font-family: ‘Arial Narrow’, sans-serif;
   -moz-text-size-adjust: auto;
   -webkit-text-size-adjust: auto;
   -ms-text-size-adjust: auto;
@@ -123,6 +130,9 @@ body {
     overflow: scroll;
     margin: .5in auto;
     background-color: #ccc; }
+
+h1, h3, h4 {
+  font-family: Verdana, Geneva, sans-serif; }
 
 h1, h3, h4, span {
   text-align: center; }
@@ -148,7 +158,7 @@ em {
     display: inline-block;
     width: 34%;
     float: right;
-    margin: .1in auto; }
+    margin: .2in auto; }
     .header #contact-info * {
       margin: 0 auto; }
   .header #links {
