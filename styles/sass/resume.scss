@@ -1,5 +1,17 @@
 // * {border: 1px solid red !important;}
 
+@media print {
+  body {
+    background-color: white !important;
+  }
+  #page {
+    position: absolute !important;
+    left: 0;
+    top: 0;
+    margin: auto !important;
+  }
+}
+
 .cl-both { clear: both; }
 
 .pos-a { position: absolute; }
