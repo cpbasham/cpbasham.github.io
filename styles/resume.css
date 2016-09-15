@@ -136,7 +136,7 @@ body {
     position: relative;
     width: 8.5in;
     height: 11in;
-    overflow: scroll;
+    overflow: auto;
     margin: .5in auto;
     background-color: #ccc; }
 
