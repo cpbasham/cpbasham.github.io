@@ -104,6 +104,12 @@ appears on the left side of the page.
     -webkit-overflow-scrolling: touch;
 }
 
+#menu .menu-flex-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
     /*
 
     */
@@ -120,6 +126,11 @@ appears on the left side of the page.
         margin: auto;
         border: none;
         padding: .25em 0em .25em 2em;
+    }
+
+    #menu .pure-menu {
+       align-self: flex-start;
+       margin-bottom: 1.5em;
     }
 
     /*
@@ -165,9 +176,8 @@ appears on the left side of the page.
         }
 
     #menu .shout-factory {
-      position: absolute;
-      bottom: 0;
-      margin: 2em auto 2em auto;
+      align-self: flex-end;
+      margin: auto auto 1em auto;
       text-align: center;
     }
 

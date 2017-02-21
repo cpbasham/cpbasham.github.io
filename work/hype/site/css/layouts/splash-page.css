@@ -7,7 +7,7 @@
   position: relative;
 }*/
 
-img {
+#main img {
   display: block;
   max-width: 100%;
 }
