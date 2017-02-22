@@ -17,6 +17,12 @@ body {
     color: #000;
 }
 
+
+#main {
+  height: 100vh;
+  width: 100%;
+}
+
 /*
 Add transition to containers so they can push in and out.
 */
@@ -49,11 +55,6 @@ This is the parent `<div>` that contains the menu and the content area.
 /*
 The content `<div>` is where all your content goes.
 */
-.content {
-    margin: 0 auto;
-    padding: 0;
-    max-width: 100%;
-}
 
 .header {
      margin: 0;
@@ -74,11 +75,6 @@ The content `<div>` is where all your content goes.
         margin-top: 0;
     }
 
-.content-subhead {
-    margin: 50px 0 20px 0;
-    font-weight: 300;
-    color: #888;
-}
 
 
 
