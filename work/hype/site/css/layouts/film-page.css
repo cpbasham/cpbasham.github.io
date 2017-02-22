@@ -5,11 +5,14 @@
   color: #FFF;
 }
 
-#main .content {
-  font-family: Impact, Charcoal, sans-serif;
-  font-size: 80%;
+.pure-g, .pure-g * {
   font-weight: 100;
   letter-spacing: normal;
+  font-family: Impact, Charcoal, sans-serif;
+}
+
+#main .content {
+  font-family: Impact, Charcoal, sans-serif;
   margin-left: 3.5em;
   height: 100%;
 }
@@ -20,20 +23,38 @@
   margin-top: 2em;
 }
 
-#main .side-image {
-  height: 100%;
+#main .side-image-container {
+  position: relative;
+}
+
+#main .side-image-container .side-image {
+  width: 100%;
 }
 
 h1, h2, h3 {
   font-style: italic;
 }
 
+.summary {
+  font-size: 90%;
+  margin-right: 10%;
+}
+
+.quotes-block {
+  margin-left: 3.5em;
+}
+
 .quotes {
-  margin: 1em 0 0 0;
+  font-family: helvetica;
+  font-weight: bold;
+  font-size: 100%;
+  margin: 1em -10% 0 0;
+  z-index: 0;
   color: #F00;
 }
 
 .quote-references {
+  font-family: helvetica;
   font-size: 67%;
   color: #F00;
 }
