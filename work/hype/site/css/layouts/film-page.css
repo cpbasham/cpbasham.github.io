@@ -1,60 +1,12 @@
 #main {
   /*background: url(../../imgs/selene-vigil.jpg) no-repeat right;*/
   height: 100%;
-  background-color: #000;
-  color: #FFF;
-}
-
-.pure-g, .pure-g * {
-  font-weight: 100;
-  letter-spacing: normal;
-  font-family: Impact, Charcoal, sans-serif;
-}
-
-#main .content {
-  font-family: Impact, Charcoal, sans-serif;
-  margin-left: 3.5em;
-  height: 100%;
-}
-
-#main .hype-logo {
-  width: 12em;
-  height: 9.25em;
-  margin-top: 2em;
 }
 
 #main .side-image-container {
   position: relative;
 }
 
-#main .side-image-container .side-image {
-  width: 100%;
-}
-
-h1, h2, h3 {
-  font-style: italic;
-}
-
-.summary {
-  font-size: 90%;
-  margin-right: 10%;
-}
-
-.quotes-block {
+#main .quotes-block {
   margin-left: 3.5em;
-}
-
-.quotes {
-  font-family: helvetica;
-  font-weight: bold;
-  font-size: 100%;
-  margin: 1em -10% 0 0;
-  z-index: 0;
-  color: #F00;
-}
-
-.quote-references {
-  font-family: helvetica;
-  font-size: 67%;
-  color: #F00;
 }
