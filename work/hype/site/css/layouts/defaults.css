@@ -18,10 +18,70 @@ body {
     height: 100vh;
 }
 
+.pure-g, .pure-g * {
+  font-weight: 100;
+  letter-spacing: normal;
+}
 
 #main {
   min-height: 100vh;
   width: 100%;
+  background-color: #000;
+  color: #FFF;
+}
+
+#main .content {
+  font-family: Impact, Charcoal, sans-serif;
+  margin-left: 3.5em;
+  height: 100%;
+}
+
+#main .basic-text {
+  font-size: 90%;
+  margin: 0;
+  /*margin-right: 10%;*/
+}
+
+#main .hype-logo {
+  width: 12em;
+  height: 9.25em;
+  margin-top: 2em;
+}
+
+#main .subhead-white {
+  color: #FFF;
+  font-weight: bold;
+  font-style: italic;
+}
+
+#main .quotes {
+  font-family: helvetica;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 100%;
+  margin: 1em -10% 0 0;
+  z-index: 0;
+  color: #F00;
+}
+
+#main .quote-references {
+  font-family: helvetica;
+  font-size: 67%;
+  color: #F00;
+}
+
+#main .side-image-container .side-image {
+  width: 100%;
+}
+
+#main .side-image-container .caption {
+  position: absolute;
+  bottom: 5%;
+  left: -20%;
+  text-align: right;
+  font-weight: bold;
+  font-family: helvetica;
+  font-size: 70%;
 }
 
 /*
@@ -53,30 +113,6 @@ This is the parent `<div>` that contains the menu and the content area.
     #layout.active .menu-link {
         left: 230px;
     }
-/*
-The content `<div>` is where all your content goes.
-*/
-
-.header {
-     margin: 0;
-     color: #333;
-     text-align: center;
-     padding: 2.5em 2em 0;
-     border-bottom: 1px solid #eee;
- }
-    .header h1 {
-        margin: 0.2em 0;
-        font-size: 3em;
-        font-weight: 300;
-    }
-     .header h2 {
-        font-weight: 300;
-        color: #ccc;
-        padding: 0;
-        margin-top: 0;
-    }
-
-
 
 
 /*
@@ -169,7 +205,7 @@ appears on the left side of the page.
         This styles a link within a selected menu item `<li>`.
         */
         #menu .pure-menu-selected a {
-            color: #fff;
+            color: #fff !important;
         }
 
     #menu .shout-factory {
