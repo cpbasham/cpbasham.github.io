@@ -1,0 +1,9 @@
+#main .content {
+  margin-right: 3.5em;
+  padding-bottom: 1em;
+}
+
+.trailer-frame {
+  display: block;
+  border: 2px solid #F00;
+}
