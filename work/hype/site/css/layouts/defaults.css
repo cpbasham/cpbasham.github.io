@@ -42,10 +42,11 @@ body {
   /*margin-right: 10%;*/
 }
 
-#main .hype-logo {
-  width: 12em;
+#main .hype-logo-small {
+  width: 14em;
   height: 9.25em;
   margin-top: 2em;
+  margin-left: -1.25em;
 }
 
 #main .subhead-white {
