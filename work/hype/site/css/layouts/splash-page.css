@@ -23,17 +23,17 @@
   z-index: 2;
 }
 
-#main .splash-background {
+/*#main .splash-background {
   position: absolute;
   /*min-width: 1920px;*/
-  min-width: 1280px;
+  /*min-width: 1280px;
   max-height: 50vh;
   left: 0;
-  bottom: 0;
+  bottom: 0;*/
   /*height: 519px;*/
   /*right: 0;*/
   z-index: 1;
-}
+}*/
 
 #main .hype-logo-container {
   position: relative;
