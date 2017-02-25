@@ -8,41 +8,44 @@
 #main .splash {
   min-height: 100vh;
   background-color: #FFF;
-  background-image: url(../../imgs/splash-cropped.png);
+  background-image: url(../../imgs/splash-vertical-cropped.png);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 130% auto;
+  margin-left: -35%;
+  height: 195vw;
   /*background-size: 100% auto;*/
 }
 
 
 /*19/10*/
+/*@media (max-width: 48em) {
 
-@media (max-aspect-ratio: 10/7) and (max-width: 48em) {
+}*/
+
+/*@media (max-aspect-ratio: 10/7) and (max-width: 48em) {
   #main .splash {
-    background-image: url(../../imgs/splash-vertical-extreme.png);
+    background-image: url(../../imgs/splash-vertical.png);
     background-size: cover;
-    /*min-width: 30em;*/
+    margin-left: -0.25em;
     height: 200vw;
   }
-}
+}*/
+/*min-width: 30em;*/
 
-@media (max-aspect-ratio: 40/43) and (max-width: 48em) {
+@media (max-aspect-ratio: 604/1174) and (max-width: 48em) {
   #main .splash {
     background-image: url(../../imgs/splash-vertical-extreme.png);
     background-size: cover;
+    margin-left: 0;
     /*min-height: 38em;*/
-    min-height: 200vw;
     height: 100vh;
-    width: auto;
-    margin-left: -.25em;
+    width: 51.44vh;
   }
 }
 
-@media (min-aspect-ratio: 40/43) and (max-width: 48em) {
+@media (max-aspect-ratio: 40/43) and (min-width: 48em) {
   #main .splash {
     background-image: url(../../imgs/splash-vertical-cropped.png);
-    background-size: cover;
-    height: 95vw;
   }
 }
 
@@ -50,17 +53,20 @@
   #main .splash {
     background-image: url(../../imgs/splash-vertical-cropped.png);
     background-size: cover;
-    min-height: 80vw;
-    height: 100vh;
+    min-height: 100vh;
+    height: 0;
+    margin-left: -6vw;
   }
 }
 
 @media (min-aspect-ratio: 40/43) and (min-width: 53em) {
   #main .splash {
-    background-image: url(../../imgs/splash-vertical-cropped.png);
+    background-image: url(../../imgs/splash-vertical-extreme.png);
     background-size: cover;
-    height: 0;
-    min-height: 80vw;
+    margin-left: 0;
+    width: 100%;
+    min-height: 130vw;
+    min-height: calc(1.94 * calc(100vw - 230px));
   }
 }
 
@@ -68,6 +74,7 @@
   #main .splash {
     background-image: url(../../imgs/splash-vertical-cropped.png);
     background-size: cover;
+    margin-left: 0;
     min-height: 80vw;
   }
 }
@@ -76,6 +83,7 @@
   #main .splash {
     background-image: url(../../imgs/splash-big.png);
     background-size: cover;
+    margin-left: 0;
     min-height: 100vh;
     height: 23em;
   }
@@ -85,6 +93,7 @@
   #main .splash {
     background-image: url(../../imgs/splash-big.png);
     background-size: cover;
+    margin-left: 0;
     min-height: 100vh;
     height: 30em;
   }
@@ -94,6 +103,7 @@
   #main .splash {
     background-image: url(../../imgs/splash-vertical-cropped.png);
     min-height: 100vh;
+    margin-left: 0;
     width: 90vh;
     width: calc(90vh - 230px);
   }
@@ -102,10 +112,12 @@
 @media (min-aspect-ratio: 27/16) and (min-width: 80em) {
   #main .splash {
     background-image: url(../../imgs/splash-big.png);
-    width: 100vw;
+    margin-left: 0;
+    width: 100%;
     width: calc(100vw - 230px);
+    /*overflow-x: hidden;*/
     height: 66vw;
-    height: calc(.66 * calc(100vw - 230px));
+    height: calc(65vw - 230px);
   }
 }
 

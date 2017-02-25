@@ -32,6 +32,7 @@ body {
 #main .content {
   font-family: Impact, Charcoal, sans-serif;
   margin-left: 3.5em;
+  margin-bottom: 1em;
   height: 100%;
 }
 
@@ -68,20 +69,6 @@ body {
   font-family: helvetica;
   font-size: 67%;
   color: #F00;
-}
-
-#main .side-image-container .side-image {
-  width: 100%;
-}
-
-#main .side-image-container .caption {
-  position: absolute;
-  bottom: 5%;
-  left: -20%;
-  text-align: right;
-  font-weight: bold;
-  font-family: helvetica;
-  font-size: 70%;
 }
 
 /*
