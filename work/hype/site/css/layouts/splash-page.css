@@ -1,63 +1,98 @@
 #body {
-  height: 100vh;
 }
 
 #main {
   background-color: #FFF;
-  color: #000;
-  /*height: 100%;*/
-  /*background: url(../../imgs/splash-cropped.png) no-repeat center bottom;*/
-  /*-webkit-background-size: 100% 100%;
-  -moz-background-size: 100% 100%;
-  -o-background-size: 100% 100%;
-  background-size: 100% 100%;*/
 }
 
-#main .content {
-  padding: 1.5em 0 0 0;
-  background: none;
-  overflow-x: hidden;
+#main .splash {
+  min-height: 100vh;
+  background-color: #FFF;
+  background-image: url(../../imgs/splash-cropped.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /*background-size: 100% auto;*/
 }
 
-#main .content * {
-  z-index: 2;
-}
 
-/*#main .splash-background {
-  position: absolute;
-  /*min-width: 1920px;*/
-  /*min-width: 1280px;
-  max-height: 50vh;
-  left: 0;
-  bottom: 0;*/
-  /*height: 519px;*/
-  /*right: 0;*/
-  z-index: 1;
-}*/
+/*19/10*/
 
-#main .hype-logo-container {
-  position: relative;
-}
-
-#main .anniversary {
-  position: absolute;
-  left: 6.25em;
-  top: .75em;
-  font-size: 1.4em;
-  letter-spacing: .05em;
-}
-
-#main .hype-logo-large {
-  width: 38em;
-  height: 28em;
-}
-
-#main .laurels-container {
-  display: flex;
-  flex-direction: column;
-}
-
-  #main .laurels-container .laurel {
-    margin: .5em 0;
-    width: 7.5em;
+@media (max-aspect-ratio: 10/7) and (max-width: 48em) {
+  #main .splash {
+    background-image: url(../../imgs/splash-vertical-extreme.png);
+    background-size: cover;
+    /*min-width: 30em;*/
+    height: 200vw;
   }
+}
+
+@media (max-aspect-ratio: 40/43) and (max-width: 48em) {
+  #main .splash {
+    background-image: url(../../imgs/splash-vertical-extreme.png);
+    background-size: cover;
+    /*min-height: 38em;*/
+    min-height: 200vw;
+    height: 100vh;
+    width: auto;
+    margin-left: -.25em;
+  }
+}
+
+@media (min-aspect-ratio: 40/43) and (max-width: 48em) {
+  #main .splash {
+    background-image: url(../../imgs/splash-vertical-cropped.png);
+    background-size: cover;
+    height: 95vw;
+  }
+}
+
+@media (min-aspect-ratio: 40/43) and (min-width: 48em) {
+  #main .splash {
+    background-image: url(../../imgs/splash-vertical-cropped.png);
+    background-size: cover;
+    height: 100vh;
+  }
+}
+
+@media (min-aspect-ratio: 40/43) and (min-width: 53em) {
+  #main .splash {
+    background-image: url(../../imgs/splash-vertical-cropped.png);
+    background-size: cover;
+    height: 0;
+    min-height: 80vw;
+  }
+}
+
+@media (min-aspect-ratio: 16/12) and (min-width: 65em) {
+  #main .splash {
+    background-image: url(../../imgs/splash-vertical-cropped.png);
+    background-size: cover;
+    min-height: 80vw;
+  }
+}
+
+@media (min-aspect-ratio: 30/16) and (min-width: 48em) {
+  #main .splash {
+    background-image: url(../../imgs/splash-big.png);
+    background-size: cover;
+    min-height: 100vh;
+    height: 23em;
+  }
+}
+
+@media (min-aspect-ratio: 27/16) and (min-width: 65em) {
+  #main .splash {
+    background-image: url(../../imgs/splash-big.png);
+    background-size: cover;
+    min-height: 100vh;
+    height: 30em;
+  }
+}
+
+@media (min-width: 80em) {
+  #main .splash {
+    background-image: url(../../imgs/splash-big.png);
+    background-size: cover;
+    height: 34em;
+  }
+}

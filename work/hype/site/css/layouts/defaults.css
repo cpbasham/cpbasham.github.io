@@ -25,7 +25,6 @@ body {
 
 #main {
   min-height: 100vh;
-  width: 100%;
   background-color: #000;
   color: #FFF;
 }
@@ -299,7 +298,8 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     }*/
 
     #layout {
-        padding-left: 230px; /* left col width "#menu" */
+        padding-left: 230px;
+        /*padding-left: 14.2em; /* magically aligned with "#menu" width.  Different because of font size */*/
         left: 0;
     }
     #menu {
