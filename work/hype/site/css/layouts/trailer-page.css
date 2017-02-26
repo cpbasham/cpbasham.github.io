@@ -1,9 +1,16 @@
+#main {
+  min-height: 100vh;
+}
+
 #main .content {
+  margin-bottom: 0;
   margin-right: 3.5em;
-  padding-bottom: 1em;
+  padding-bottom: 3em;
 }
 
 .trailer-frame {
-  display: block;
+  width: 50vw;
+  height: 32vw;
+  max-height: 70vh;
   border: 2px solid #F00;
 }
