@@ -1,7 +1,16 @@
 #main {
     background: url(../../imgs/kurt-cobain.png) no-repeat center;
-    -webkit-background-size: 100% 100%;
-    -moz-background-size: 100% 100%;
-    -o-background-size: 100% 100%;
-    background-size: 100% 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#main .content .text {
+  display: block;
+  font-weight: 100;
+}
+
+#main .content .text:not(.caps) {
+  font-family: helvetica;
 }

@@ -18,7 +18,7 @@ body {
     height: 100vh;
 }
 
-.pure-g, .pure-g * {
+#main .content .text, #main .content .text .pure-g * {
   font-weight: 100;
   letter-spacing: normal;
 }
@@ -32,7 +32,6 @@ body {
 #main .content {
   font-family: Impact, Charcoal, sans-serif;
   margin-left: 3.5em;
-  margin-bottom: 1em;
   height: 100%;
 }
 

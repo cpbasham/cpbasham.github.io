@@ -1,3 +1,25 @@
 #main .pure-menu {
   margin: 1em auto;
 }
+
+#main .content {
+  margin-right: 3.5em;
+  font-family: helvetica;
+  width: 50%;
+}
+
+#main .content .text {
+  z-index: 2
+}
+
+#main .content .side-image-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 25%;
+  z-index: 1;
+}
+
+#main .content .side-image-container .side-image {
+  width: 100%;
+}

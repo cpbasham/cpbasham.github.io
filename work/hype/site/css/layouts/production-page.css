@@ -1,4 +1,19 @@
 #main .side-image-container .side-image {
-  max-width: 306px; /* pic width */
-  margin-left: 2em;
+  max-height: 100%;
+  /*max-width: 306px; /* pic width */*/
+  /*margin-left: 2em;*/
+}
+
+/*#main .content {
+  padding-bottom: 1em;
+}*/
+
+#main .content .text {
+  margin-right: 3.5em;
+}
+
+@media (max-width: 63.1em) {
+  #main .content .text {
+    width: 100%;
+  }
 }
