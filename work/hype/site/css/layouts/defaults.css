@@ -41,11 +41,20 @@ body {
   /*margin-right: 10%;*/
 }
 
+#main .splash-link {
+  display: block;
+  margin-top: 2em;
+}
+
 #main .hype-logo-small {
+  display: block;
   width: 14em;
   height: 9.25em;
-  margin-top: 2em;
   margin-left: -1.25em;
+}
+
+#main .hype-logo-small a {
+  display: block;
 }
 
 #main .subhead-white {
@@ -200,10 +209,14 @@ appears on the left side of the page.
       text-align: center;
     }
 
-    #menu .shout-factory img {
-      margin-left: auto;
-      margin-right: auto;
+    #menu .shout-factory {
+      display: block;
       width: 60%;
+      padding: 0;
+    }
+
+    #menu .shout-factory img {
+      display: block;
     }
 
     /*
@@ -231,13 +244,13 @@ small screens.
     display: block; /* show this only on small screens */
     top: 0;
     left: 0; /* "#menu width" */
-    background: #000;
-    background: rgba(0,0,0,0.7);
+    background-image: url(../../imgs/menu.png);
+    background-size: 100% 100%;
     font-size: 10px; /* change this value to increase/decrease button size */
     z-index: 10;
     width: 2em;
     height: auto;
-    padding: 2.1em 1.6em;
+    padding: 2.1em 2.1em;
 }
 
     .menu-link:hover,
