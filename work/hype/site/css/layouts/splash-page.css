@@ -16,6 +16,9 @@
   /*background-size: 100% auto;*/
 }
 
+.menu-link {
+    background-image: url(../../imgs/menu-icon.png);
+}
 
 /*19/10*/
 /*@media (max-width: 48em) {

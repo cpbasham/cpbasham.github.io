@@ -36,6 +36,7 @@ body {
 }
 
 #main .basic-text {
+  font-family: helvetica;
   font-size: 90%;
   margin: 0;
   /*margin-right: 10%;*/
@@ -43,7 +44,8 @@ body {
 
 #main .splash-link {
   display: block;
-  margin-top: 2em;
+  padding-top: 2em;
+  /*margin-top: 2em;*/
 }
 
 #main .hype-logo-small {
@@ -209,14 +211,17 @@ appears on the left side of the page.
       text-align: center;
     }
 
-    #menu .shout-factory {
+    #menu .shout-factory a {
       display: block;
+      margin-left: auto;
+      margin-right: auto;
       width: 60%;
       padding: 0;
     }
 
-    #menu .shout-factory img {
+    #menu .shout-factory a img {
       display: block;
+      width: 100%;
     }
 
     /*
@@ -244,19 +249,17 @@ small screens.
     display: block; /* show this only on small screens */
     top: 0;
     left: 0; /* "#menu width" */
-    background-image: url(../../imgs/menu.png);
-    background-size: 100% 100%;
+    background: none;
+    background-image: url(../../imgs/menu-icon-white.png);
+    background-size: 75% 75%;
+    background-repeat: no-repeat;
+    background-position: center;
     font-size: 10px; /* change this value to increase/decrease button size */
     z-index: 10;
     width: 2em;
     height: auto;
     padding: 2.1em 2.1em;
 }
-
-    .menu-link:hover,
-    .menu-link:focus {
-        background: #000;
-    }
 
     .menu-link span {
         position: relative;

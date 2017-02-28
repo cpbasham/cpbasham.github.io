@@ -6,11 +6,14 @@
     background-size: cover;
 }
 
-#main .content .text {
+#main .content .subject-head {
   display: block;
   font-weight: 100;
 }
 
-#main .content .text:not(.caps) {
+#main .content .subject-body {
+  display: block;
+  font-weight: 100;
   font-family: helvetica;
+  margin-bottom: 1em;
 }
