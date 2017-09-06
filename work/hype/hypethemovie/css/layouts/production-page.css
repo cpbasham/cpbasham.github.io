@@ -1,0 +1,28 @@
+#main .side-image-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#main .side-image-container .side-image {
+  max-height: 100%;
+  /*max-width: 306px; /* pic width */*/
+  /*margin-left: 2em;*/
+}
+
+#main {
+  padding-bottom: 3;
+}
+
+#main .content .photo-credit-space {
+  margin-bottom: 3em;
+}
+
+#main .content .text {
+  margin-right: 3.5em;
+}
+
+@media (max-width: 63.1em) {
+  #main .content .text {
+    width: 100%;
+  }
+}

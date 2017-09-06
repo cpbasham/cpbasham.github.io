@@ -1,0 +1,11 @@
+#main .content {
+  margin-bottom: 0;
+  margin-right: 3.5em;
+  padding-bottom: 3em;
+}
+
+.trailer-frame {
+  width: 44vw;
+  height: 25vw;
+  border: 2px solid #F00;
+}

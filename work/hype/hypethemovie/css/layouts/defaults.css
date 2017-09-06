@@ -1,0 +1,344 @@
+/*
+Apply a natural box layout model to all elements, but allowing components to change.
+*/
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/*
+Add font and font color defaults.
+*/
+body {
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 100%
+    color: #000;
+    height: 100vh;
+}
+
+#main .content .text, #main .content .text .pure-g * {
+  font-weight: 100;
+  letter-spacing: normal;
+}
+
+#main {
+  position: relative;
+  min-height: 100vh;
+  background-color: #000;
+  color: #FFF;
+  padding-bottom: 3em;
+}
+
+#main .photo-credit {
+  position: absolute;
+  left: 1em;
+  bottom: 1em;
+  color: #FFF;
+  font-family: helvetica, sans-serif;
+  text-weight: 100;
+}
+
+#main .content {
+  font-family: Impact, Charcoal, sans-serif;
+  margin-left: 3.5em;
+  height: 100%;
+}
+
+#main .basic-text {
+  font-family: helvetica;
+  font-size: 90%;
+  margin: 0;
+  /*margin-right: 10%;*/
+}
+
+#main .splash-link {
+  display: block;
+  padding-top: 2em;
+  /*margin-top: 2em;*/
+}
+
+#main .hype-logo-small {
+  display: block;
+  width: 14em;
+  height: 9.25em;
+  margin-left: -1.25em;
+}
+
+#main .hype-logo-small a {
+  display: block;
+}
+
+#main .subhead-white {
+  font-family: helvetica;
+  color: #FFF;
+  font-weight: bold;
+  font-style: italic;
+}
+
+#main .quotes {
+  font-family: helvetica;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 100%;
+  margin: 1em 0 0 0;
+  z-index: 0;
+  color: #F00;
+}
+
+#main .quote-references {
+  font-family: helvetica;
+  font-size: 67%;
+  color: #F00;
+}
+
+/*
+Add transition to containers so they can push in and out.
+*/
+#layout,
+#menu,
+.menu-link {
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+/*
+This is the parent `<div>` that contains the menu and the content area.
+*/
+#layout {
+    position: relative;
+    left: 0;
+    padding-left: 0;
+}
+    #layout.active #menu {
+        left: 230px;
+        width: 230px;
+    }
+
+    #layout.active .menu-link {
+        left: 230px;
+    }
+
+
+/*
+The `#menu` `<div>` is the parent `<div>` that contains the `.pure-menu` that
+appears on the left side of the page.
+*/
+
+#menu {
+    margin-left: -230px;
+    width: 230px;
+    /*min-height: 23em;*/
+    /*margin-left: -9.6em;*/
+    /*width: 9.6em;*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1000; /* so the menu or its navicon stays above all content */
+    font-size: 1.5em;
+    background: #FF0317;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+#menu .menu-flex-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+    /*
+
+    */
+    #menu .nav-list {
+      margin-top: 2em;
+    }
+
+
+    /*
+    All anchors inside the menu should be styled like this.
+    */
+    #menu a {
+        color: #000;
+        margin: auto;
+        border: none;
+        padding: .25em 0em .25em 2em;
+    }
+
+    #menu .pure-menu {
+       align-self: flex-start;
+       margin-bottom: 1.5em;
+    }
+
+    /*
+    Remove all background/borders, since we are applying them to #menu.
+    */
+     #menu .pure-menu,
+     #menu .pure-menu ul {
+        border: none;
+        background: transparent;
+    }
+
+    /*
+    Add that light border to separate items into groups.
+    */
+    /*#menu .pure-menu .menu-item-divided {
+        border-top: 1px solid #333;
+    }*/
+        /*
+        Change color of the anchor links on hover/focus.
+        */
+        #menu .pure-menu li a:hover {
+            background-color: transparent;
+            color: #DDD;
+        }
+
+        #menu .pure-menu li a.active {
+            color: #FFF;
+        }
+
+    /*
+    This styles the selected menu item `<li>`.
+    */
+    /*#menu .pure-menu-selected,
+    #menu .pure-menu-heading {
+        background: #000;
+    }*/
+        /*
+        This styles a link within a selected menu item `<li>`.
+        */
+        #menu .pure-menu-selected a {
+            color: #fff !important;
+        }
+
+    #menu .shout-factory {
+      align-self: flex-end;
+      margin: auto auto 1em auto;
+      text-align: center;
+    }
+
+    #menu .shout-factory a {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 60%;
+      padding: 0;
+    }
+
+    #menu .shout-factory a img {
+      display: block;
+      width: 100%;
+    }
+
+    /*
+    This styles the menu heading.
+    */
+    /*#menu .pure-menu-heading {
+        font-size: 110%;
+        color: #fff;
+        margin: 0;
+    }*/
+
+/* -- Dynamic Button For Responsive Menu -------------------------------------*/
+
+/*
+The button to open/close the Menu is custom-made and not part of Pure. Here's
+how it works:
+*/
+
+/*
+`.menu-link` represents the responsive menu toggle that shows/hides on
+small screens.
+*/
+.menu-link {
+    position: fixed;
+    display: block; /* show this only on small screens */
+    top: 0;
+    left: 0; /* "#menu width" */
+    background: none;
+    background-image: url(../../imgs/menu-icon-white.png);
+    background-size: 75% 75%;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-size: 10px; /* change this value to increase/decrease button size */
+    z-index: 10;
+    width: 2em;
+    height: auto;
+    padding: 2.1em 2.1em;
+}
+
+    .menu-link span {
+        position: relative;
+        display: block;
+    }
+
+    .menu-link span,
+    .menu-link span:before,
+    .menu-link span:after {
+        background-color: #fff;
+        width: 100%;
+        height: 0.2em;
+    }
+
+        .menu-link span:before,
+        .menu-link span:after {
+            position: absolute;
+            margin-top: -0.6em;
+            content: " ";
+        }
+
+        .menu-link span:after {
+            margin-top: 0.6em;
+        }
+
+
+/* -- Responsive Styles (Media Queries) ------------------------------------- */
+
+/*
+Hides the menu at `48em`, but modify this based on your app's needs.
+*/
+@media (min-width: 48em) {
+
+    /*.header,
+    .content {
+        padding-left: 2em;
+        padding-right: 2em;
+    }*/
+
+    #layout {
+        padding-left: 230px;
+        /*padding-left: 14.2em; /* magically aligned with "#menu" width.  Different because of font size */*/
+        left: 0;
+    }
+    #menu {
+        left: 230px;
+    }
+
+    .menu-link {
+        position: fixed;
+        left: 230px;
+        display: none;
+    }
+
+    #layout.active .menu-link {
+        left: 230px;
+    }
+}
+
+@media (max-width: 48em) {
+    /* Only apply this when the window is small. Otherwise, the following
+    case results in extra padding on the left:
+        * Make the window small.
+        * Tap the menu to trigger the active state.
+        * Make the window large again.
+    */
+    #layout.active {
+        position: relative;
+        left: 230px;
+    }
+}

@@ -17,3 +17,7 @@
   font-family: helvetica;
   margin-bottom: 1em;
 }
+
+#main .content .subject-body a {
+  color: #FFF;
+}

@@ -4,9 +4,12 @@
   /*margin-left: 2em;*/
 }
 
-/*#main .content {
-  padding-bottom: 1em;
-}*/
+#main .content {
+  padding-bottom: 0;
+}
+#main .content .photo-credit-space {
+  margin-bottom: 3em;
+}
 
 #main .content .text {
   margin-right: 3.5em;

@@ -1,0 +1,23 @@
+#main {
+    background: url(../../imgs/kurt-cobain.png) no-repeat center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#main .content .subject-head {
+  display: block;
+  font-weight: 100;
+}
+
+#main .content .subject-body {
+  display: block;
+  font-weight: 100;
+  font-family: helvetica;
+  margin-bottom: 1em;
+}
+
+#main .content .subject-body a {
+  color: #FFF;
+}
