@@ -6,34 +6,38 @@
   padding-bottom: 0;
 }
 
+#main .splash {
+  width: 100%;
+  height: 100vh;
+  background-image: url(../../imgs/splash-bottom.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100% auto;
+  min-height: 365px;
+  /*max-height: 90vh;*/
+}
+
 #main .splash-top {
-  background-image: url(../../imgs/splash-big-top.png);
+  background-image: url(../../imgs/splash-vertical-top.png);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   width: 100%;
   height: 60%;
-  min-width: 538px;
   min-height: 257px;
-}
-#main .splash-bottom {
 }
 
 .menu-link {
     background-image: url(../../imgs/menu-icon.png);
 }
 
-/*@media (min-width: 53em) {*/
 @media (min-width: 48em) {
   #main .splash {
-    width: 100%;
-    height: 100vh;
-    background-image: url(../../imgs/splash-bottom.png);
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: 100% auto;
     min-width: 538px;  /* 768px - 230px from nav */
-    min-height: 325px;
-    /*max-height: 90vh;*/
+  }
+  #main .splash-top {
+    background-image: url(../../imgs/splash-big-top.png);
+    min-width: 538px;
+    min-height: 257px;
   }
 }
