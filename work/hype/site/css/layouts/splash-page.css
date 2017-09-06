@@ -7,17 +7,16 @@
 }
 
 #main .splash-top {
-  /*min-height: 100vh;*/
-  background-color: #FFF;
-  /*background-image: url(../../imgs/splash-vertical-cropped.png);*/
+  background-image: url(../../imgs/splash-big-top.png);
+  background-position: center;
+  background-size: contain;
   background-repeat: no-repeat;
-  /*background-size: 130% auto;*/
-  /*margin-left: -35%;*/
-  /*height: 195vw;*/
-  /*background-size: 100% auto;*/
+  width: 100%;
+  height: 60%;
+  min-width: 538px;
+  min-height: 257px;
 }
 #main .splash-bottom {
-  background-repeat: no-repeat;
 }
 
 .menu-link {
@@ -29,12 +28,11 @@
   #main .splash {
     width: 100%;
     height: 100vh;
-    background-image: url(../../imgs/splash-big-top.png), url(../../imgs/splash-bottom.png);
-    background-repeat: no-repeat, no-repeat;
-    background-position: center top, bottom;
-    background-size: 100% auto, 100% auto;
+    background-image: url(../../imgs/splash-bottom.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100% auto;
     min-width: 538px;  /* 768px - 230px from nav */
-    min-height: 50vw;
     /*max-height: 90vh;*/
   }
 }
