@@ -21,115 +21,12 @@
     background-image: url(../../imgs/menu-icon.png);
 }
 
-/*19/10*/
-/*@media (max-width: 48em) {
-
-}*/
-
-/*@media (max-aspect-ratio: 10/7) and (max-width: 48em) {
-  #main .splash {
-    background-image: url(../../imgs/splash-vertical.png);
-    background-size: cover;
-    margin-left: -0.25em;
-    height: 200vw;
-  }
-}*/
-/*min-width: 30em;*/
-
-@media (max-aspect-ratio: 604/1174) and (max-width: 48em) {
-  #main .splash {
-    background-image: url(../../imgs/splash-vertical-extreme.png);
-    background-size: cover;
-    margin-left: 0;
-    /*min-height: 38em;*/
-    height: 100vh;
-    width: 51.44vh;
-  }
-}
-
-@media (max-aspect-ratio: 40/43) and (min-width: 48em) {
-  #main .splash {
-    background-image: url(../../imgs/splash-vertical-cropped.png);
-  }
-}
-
-@media (min-aspect-ratio: 40/43) and (min-width: 48em) {
-  #main .splash {
-    background-image: url(../../imgs/splash-vertical-cropped.png);
-    background-size: cover;
-    min-height: 100vh;
-    height: 0;
-    margin-left: -6vw;
-  }
-}
-
-@media (min-aspect-ratio: 40/43) and (min-width: 53em) {
-  #main .splash {
-    background-image: url(../../imgs/splash-vertical-extreme.png);
-    background-size: cover;
-    margin-left: 0;
-    width: 100%;
-    min-height: 130vw;
-    min-height: calc(1.94 * calc(100vw - 230px));
-  }
-}
-
-@media (min-aspect-ratio: 16/12) and (min-width: 65em) {
-  #main .splash {
-    background-image: url(../../imgs/splash-vertical-cropped.png);
-    background-size: cover;
-    margin-left: 0;
-    min-height: 80vw;
-  }
-}
-
-@media (min-aspect-ratio: 30/16) and (min-width: 48em) {
+@media (min-width: 53em) {
   #main .splash {
     background-image: url(../../imgs/splash-big.png);
-    background-size: cover;
+    background-size: contain;
     margin-left: 0;
-    min-height: 100vh;
-    height: 23em;
-  }
-}
-
-@media (min-aspect-ratio: 27/16) and (min-width: 65em) {
-  #main .splash {
-    background-image: url(../../imgs/splash-big.png);
-    background-size: cover;
-    margin-left: 0;
-    min-height: 100vh;
-    height: 30em;
-  }
-}
-
-@media (max-aspect-ratio: 1/1) and (min-width: 80em) {
-  #main .splash {
-    background-image: url(../../imgs/splash-vertical-cropped.png);
-    min-height: 100vh;
-    margin-left: 0;
-    width: 90vh;
-    width: calc(90vh - 230px);
-  }
-}
-
-@media (min-aspect-ratio: 27/16) and (min-width: 80em) {
-  #main .splash {
-    background-image: url(../../imgs/splash-big.png);
-    margin-left: 0;
-    width: 100%;
-    width: calc(100vw - 230px);
-    /*overflow-x: hidden;*/
-    height: 66vw;
-    height: calc(65vw - 230px);
-  }
-}
-
-/*@media (min-width: 80em) and (min-aspect-ratio: 27/16){
-  #main .splash {
-    background-image: url(../../imgs/splash-big.png);
-    background-size: cover;
-    min-height: 65vw;
+    /*width: 100%;*/
     height: auto;
   }
-}*/
+}
