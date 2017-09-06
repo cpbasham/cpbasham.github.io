@@ -33,6 +33,7 @@
     background-position: bottom;
     background-size: 100% auto;
     min-width: 538px;  /* 768px - 230px from nav */
+    min-height: 325px;
     /*max-height: 90vh;*/
   }
 }
