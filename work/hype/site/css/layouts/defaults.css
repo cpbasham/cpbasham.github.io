@@ -21,7 +21,6 @@ body {
 #main .content .text, #main .content .text .pure-g * {
   font-weight: 100;
   letter-spacing: normal;
-  margin-bottom: 3em;
 }
 
 #main {
@@ -29,13 +28,22 @@ body {
   min-height: 100vh;
   background-color: #000;
   color: #FFF;
+  padding-bottom: 3em;
+}
+
+#main .photo-credit {
+  position: absolute;
+  left: 1em;
+  bottom: 1em;
+  color: #FFF;
+  font-family: helvetica, sans-serif;
+  text-weight: 100;
 }
 
 #main .content {
   font-family: Impact, Charcoal, sans-serif;
   margin-left: 3.5em;
   height: 100%;
-  padding-bottom: 3em;
 }
 
 #main .basic-text {
@@ -63,18 +71,10 @@ body {
 }
 
 #main .subhead-white {
+  font-family: helvetica;
   color: #FFF;
   font-weight: bold;
   font-style: italic;
-}
-
-#main .photo-credit {
-  position: absolute;
-  color: #FFF;
-  font-family: helvetica, sans-serif;
-  text-weight: 100;
-  bottom: 1em;
-  left: 1em;
 }
 
 #main .quotes {
@@ -193,8 +193,7 @@ appears on the left side of the page.
         /*
         Change color of the anchor links on hover/focus.
         */
-        #menu .pure-menu li a:hover,
-        #menu .pure-menu li a:focus {
+        #menu .pure-menu li a:hover {
             background-color: transparent;
             color: #DDD;
         }

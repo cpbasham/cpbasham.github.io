@@ -1,12 +1,19 @@
+#main .side-image-container {
+  display: flex;
+  flex-direction: column;
+}
+
 #main .side-image-container .side-image {
   max-height: 100%;
+  margin-top: 2em;
   /*max-width: 306px; /* pic width */*/
   /*margin-left: 2em;*/
 }
 
-#main .content {
-  padding-bottom: 0;
+#main {
+  padding-bottom: 3;
 }
+
 #main .content .photo-credit-space {
   margin-bottom: 3em;
 }
