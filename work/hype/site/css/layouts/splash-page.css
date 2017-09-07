@@ -13,7 +13,8 @@
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: 100% auto;
-  min-height: 365px;
+  /*min-height: 365px;*/
+  min-height: 400px;
   /*max-height: 90vh;*/
 }
 
