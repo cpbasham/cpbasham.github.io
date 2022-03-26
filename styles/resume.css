@@ -39,6 +39,18 @@
   display: inline-block;
 }
 
+.d-g {
+  display: grid;
+}
+
+.d-ig {
+  display: inline-grid;
+}
+
+.d-f {
+  display: flex;
+}
+
 .d-t {
   display: table;
 }
@@ -302,6 +314,9 @@ a {
 a:active {
   color: navy;
 }
+a span {
+  color: black;
+}
 
 em {
   font-weight: bold;
@@ -323,7 +338,7 @@ em {
 
 /* Style all font awesome icons */
 .icon-container {
-  padding: 0.5em 1em;
+  padding: 0 1em;
 }
 
 .fa {
@@ -341,7 +356,7 @@ em {
 }
 
 /* Set a specific color for each brand */
-/* Facebook */
+/* LinkedIn */
 .fa-facebook {
   background: #3B5998;
   color: white;
@@ -351,6 +366,142 @@ em {
 .fa-twitter {
   background: #55ACEE;
   color: white;
+}
+
+.gtc-2-1 {
+  grid-template-columns: 2fr 1fr;
+}
+
+header {
+  grid-template-columns: 2fr 1fr;
+}
+
+.jc-fs {
+  justify-content: flex-start;
+}
+
+.jc-fe {
+  justify-content: flex-end;
+}
+
+.jc-c {
+  justify-content: center;
+}
+
+.jc-sa {
+  justify-content: space-around;
+}
+
+.jc-sb {
+  justify-content: space-between;
+}
+
+.jc-se {
+  justify-content: space-evenly;
+}
+
+.flxd-r {
+  flex-direction: row;
+}
+
+.flxd-rr {
+  flex-direction: row-reverse;
+}
+
+.flxd-c {
+  flex-direction: column;
+}
+
+.flxd-cr {
+  flex-direction: column-reverse;
+}
+
+.flxw-no {
+  flex-wrap: nowrap;
+}
+
+.flxw-w {
+  flex-wrap: wrap;
+}
+
+.flxw-wr {
+  flex-wrap: wrap-reverse;
+}
+
+.order-m1 {
+  order: -1;
+}
+
+.order-0 {
+  order: 0;
+}
+
+.order-1 {
+  order: 1;
+}
+
+.ai-fs {
+  align-items: flex-start;
+}
+
+.ai-fe {
+  align-items: flex-end;
+}
+
+.ai-c {
+  align-items: center;
+}
+
+.ai-b {
+  align-items: baseline;
+}
+
+.ai-s {
+  align-items: stretch;
+}
+
+.as-fs {
+  align-self: flex-start;
+}
+
+.as-fe {
+  align-self: flex-end;
+}
+
+.as-c {
+  align-self: center;
+}
+
+.as-b {
+  align-self: baseline;
+}
+
+.as-s {
+  align-self: stretch;
+}
+
+.ac-fs {
+  align-content: flex-start;
+}
+
+.ac-fe {
+  align-content: flex-end;
+}
+
+.ac-sa {
+  align-content: space-around;
+}
+
+.ac-sb {
+  align-content: space-between;
+}
+
+.ac-se {
+  align-content: space-evenly;
+}
+
+.ac-s {
+  align-content: stretch;
 }
 
 /*# sourceMappingURL=resume.css.map */
