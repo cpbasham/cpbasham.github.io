@@ -13,18 +13,29 @@
 }
 
 .cl-both { clear: both; }
+.cl-l { clear: left; }
+.cl-r { clear: right; }
 
 .pos-a { position: absolute; }
 .pos-r { position: relative; }
 
 .d-b { display: block; }
 .d-ib { display: inline-block; }
+.d-t  { display: table; }
+.d-tr { display: table-row; }
+.d-tc { display: table-cell; }
 
 .l-0 { left: 0; }
 .l-5p { left: 5%; }
 
-.w-95 { width: 95%; }
+.w-32  { width: 32%; }
+.w-33  { width: 33%; }
+.w-34  { width: 34%; }
+.w-50  { width: 50%; }
+.w-66  { width: 66%; }
+.w-95  { width: 95%; }
 .h-80px { height: 80px; }
+.h-100 { height: 100%; }
 
 .fl-l { float: left; }
 .fl-r { float: right; }
@@ -33,35 +44,52 @@
 .ta-l { text-align: left; }
 .ta-r { text-align: right; }
 
-.pb-1 { padding-bottom: 1em; }
-.pb-1-5 { padding-bottom: 1.5em; }
-.pl-1 { padding-left: 1em; }
-.pr-1 { padding-right: 1em; }
-.pr-2-5 { padding-right: 2.5em; }
+.lh-0-7 { line-height: 0.7em; }
+.lh-1-5 { line-height: 1.5em; }
 
+.pb-1    { padding-bottom:  1em; }
+.pb-1-5  { padding-bottom:  1.5em; }
+.pl-0-15in { padding-left:  0.15in; }
+.pl-1    { padding-left:    1em; }
+.pr-0-15in { padding-right: 0.15in; }
+.pr-1    { padding-right:   1em; }
+.pr-2-5  { padding-right:   2.5em; }
+.p-1in-0 { padding: .1in 0; }
 
-.m-0 { margin: 0; }
-.mt-0   { margin-top: 0; }
-.mt-0-5   { margin-top: 0.5em; }
-.mt-0-75   { margin-top: 0.75em; }
-.mt-1   { margin-top: 1em; }
-.mt-1-5   { margin-top: 1.5em; }
-.mt-2   { margin-top: 2em; }
-.mr-2   { margin-right: 2em; }
-.mb-0   { margin-bottom: 0; }
+.mt-0    { margin-top:    0; }
+.mt-0-5  { margin-top:    0.5em; }
+.mt-0-75 { margin-top:    0.75em; }
+.mt-1    { margin-top:    1em; }
+.mt-1-5  { margin-top:    1.5em; }
+.mt-2    { margin-top:    2em; }
+.mr-2    { margin-right:  2em; }
+.mb-0    { margin-bottom: 0; }
 .mb-0-25 { margin-bottom: 0.25em; }
-.mb-0-5 { margin-bottom: 0.5em; }
+.mb-0-5  { margin-bottom: 0.5em; }
 .mb-0-75 { margin-bottom: 0.75em; }
-.ml-2   { margin-left: 2em; }
-.ml-5p { margin-left: 5%; }
-.m-c { margin-left: auto; margin-right: auto; }
+.mb-1    { margin-bottom: 1em; }
+.ml-2    { margin-left:   2em; }
+.ml-5p   { margin-left:   5%; }
+.m-c     { margin-left:   auto;
+           margin-right:  auto; }
+.m-0         { margin: 0; }
+.m-0-auto    { margin: 0    auto; }
+.m-0-2-auto  { margin: .2in auto; }
+.m-05em-auto { margin: .5em auto; }
+.m-1em-auto  { margin: 1em  auto; }
 
 .c-highlight1 { color: red; }
 .c-highlight2 { color: red; }
+.bgc-ddd { background-color: #ddd; }
+.bgc-ccc { background-color: #ccc; }
+.bgc-000 { background-color: #000; }
 
 .va-t { vertical-align: top; }
+.va-m { vertical-align: middle; }
 .of-a { overflow: auto; }
 .of-h { overflow: hidden; }
+
+.lst-n { list-style-type: none; }
 
 body {
   font-family: ‘Arial Narrow’, sans-serif;
@@ -69,7 +97,6 @@ body {
   -webkit-text-size-adjust: auto;
   -ms-text-size-adjust: auto;
   // background-color: grey;
-  background-color: black;
 
   &>#page {
     position: relative;
@@ -103,67 +130,11 @@ em {
   font-style: normal;
 }
 
-.header {
-  background-color: #ddd;
-  padding: .1in;
-
-  & #name {
-    display: block;
-    width: 66%;
-    float: left;
-  }
-  & #contact-info {
-    display: inline-block;
-    width: 34%;
-    float: right;
-    margin: .2in auto;
-    & * {
-      margin: 0 auto;
-    }
-  }
-  & #links {
-    position: relative;
-    display: block;
-    margin: 0 auto;
-
-    & span {
-      display: inline-block;
-      width: 32.5%;
-    }
-  }
-}
-
 #main-container {
-  clear: both;
-  position: relative;
-
   & img {
     width: 144px;
     height: 80px;
   }
-
-  & .col-2-l {
-    width: 50%;
-    float: left;
-    padding-right: .15in;
-  }
-  & .col-2-r {
-    width: 50%;
-    float: right;
-    padding-left: .15in;
-  }
-
-  & ul {
-    text-align: left;
-  }
-}
-
-.projects {
-  background-color: #ddd;
-}
-
-#experience {
-  width: 95%;
 }
 
 .header-date {
@@ -174,7 +145,47 @@ em {
   // position: absolute;
   // white-space: nowrap;
   // margin-left: 1em;
-  vertical-align: middle;
+  // vertical-align: middle;
   color: #d33;
   margin: .2em auto;
+}
+
+
+
+
+
+
+
+/* Style all font awesome icons */
+.icon-container {
+  padding: .5em 1em;
+
+}
+
+.fa {
+  font-size: 1em;
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
 }
