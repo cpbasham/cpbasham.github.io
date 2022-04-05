@@ -7,136 +7,117 @@
   <link rel="stylesheet" href="/styles/default.css" type="text/css">
   <link rel="stylesheet" href="/styles/resume.css" type="text/css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>/pr
+</head>
 <body class="bgc-000">
 <div id="page">
 
-  <header id="header" class="clearfix bgc-ddd d-g p-0-1in">
+  <!-- I've tried to keep this HTML & (S)CSS readable and functional like my code. -->
+  <!-- But I would choose food poisoning over "front-end" work almost any day of the week. -->
+  <header id="header" class="bgc-ddd d-g gtc-2-1 p-015in-02in">
 
-    <div class="" id="name-container">
-      <h1 class="m-05em-auto">Cameron P. Basham</h1>
-      <div class="m-1em-auto">
-        <h4 class="m-0-auto">cameron.basham at gmail</h4>
-        <h4 class="m-0-auto">Aurora, Colorado</h4>
+    <div id="header-left" class="d-g gtr-1-1 ai-c">
+      <div id="header-left-top" class="">
+        <h1 id="header-name" class="ta-c m-0">Cameron P. Basham</h1>
+      </div>
+      <div id="header-left-bot" class="d-g gtc-1-1 jc-c">
+        <div id="header-contact-info">
+          <h5 class="ta-r m-0-auto">DevOps Engineer</h5>
+          <h5 class="ta-r m-0-auto">Aurora, Colorado</h5>
+          <h5 class="ta-r m-0-auto">cameron.basham at gmail</h5>
+        </div>
+        <div id="header-misc" class="d-f ta-c flxd-c jc-sa">
+          <h6 id="header-site-under-construction" class="ta-c m-0 c-highlight2">&lt;site under construction&gt;</h6>
+          <div id="header-quote-container" class="ta-c m-0-auto">
+            <h6 id="header-quote" class="ta-c m-0"><i>We're gonna be alright.</i></h6>
+            <!-- <h6 id="header-quote2" class="m-0">"Do you hear me, do you feel me? We gon' be alright"</h6> -->
+            <h6 id="header-quote-description" class="ta-r m-0">- Life mantra</h6>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="d-ib" id="contact-info">
-      <div class="d-g h-100 ac-se" id="contact-info-inner">
+    <div id="header-right" class="">
+      <!-- <div id="header-right-top" class=""></div> -->
+      <div id="header-right-bot" class="h-100">
+        <div id="header-links" class="d-g h-100 gtr-1-1-1-1">
 
-        <div class="icon-container" id="linkedin-container">
-          <a href="https://linkedin.com/in/cpbasham"><span class="fa fa-linkedin"></span> linkedin.com/in/cpbasham</a>
+          <div></div>
+
+          <div class="icon-container" id="linkedin-container">
+            <a href="https://linkedin.com/in/cpbasham"><span class="fa fa-linkedin"></span> linkedin.com/in/cpbasham</a>
+          </div>
+
+          <div class="icon-container" id="github-container">
+            <a href="https://github.com/cpbasham"><span class="fa fa-github"></span> github.com/cpbasham</a>
+          </div>
+
+          <div class="icon-container" id="gitlab-container">
+            <a href="https://gitlab.com/clambordan"><span class="fa fa-gitlab"></span> gitlab.com/clambordan</a>
+          </div>
+
         </div>
-
-        <div class="icon-container" id="github-container">
-          <a href="https://github.com/cpbasham"><span class="fa fa-github"></span> github.com/cpbasham</a>
-        </div>
-
-        <div class="icon-container" id="gitlab-container">
-          <a href="https://gitlab.com/clambordan"><span class="fa fa-gitlab"></span> gitlab.com/clambordan</a>
-        </div>
-
       </div>
     </div>
 
   </header>
 
-  <div id="main-container" class="clearfix cl-both pos-r">
+  <div id="main-container" class="pos-r">
 
-    <div id="top-columns" class="clearfix mb-1">
-      <div class="fl-l w-50 pr-0-15in pl-1">
-        <h3 id="about-me" class="mb-0-75">About Me</h3>
-        <ul class="mt-0 lst-n">
-          <!-- <li>Love programming, teaching, language studies.</li> -->
-          <li>I am passionate about - programming • teaching • comic strips • interactive media • natural languages</li>
-          <li>Coworkers know me as  - helpful • empathetic • amicable • focused on improving workflows</li>
-          <li>Interested in emulation and working close to the metal.</li>
-          <li>Currently developing react/redux knowledge.</li>
+    <div id="top-columns" class="d-g gtc-1-1-1">
+
+      <div id="top-columns-left" class="">
+        <h4 class="mb-0-75 ta-c">I am passionate about</h4>
+        <ul class="mt-0 ml-a w-95">
+          <li>scripting &amp; automation</li>
+          <li>teaching &amp; helping people</li>
+          <li>natural &amp; con languages</li>
+          <li>interactive media</li>
+          <li>comic strips</li>
         </ul>
       </div>
 
-      <div class="fl-r w-50 pl-0-15in pr-2-5">
-        <h3 class="mb-0-75">Skills</h3>
-        <ul class="mt-0 lst-n">
-          <li>Bash • Docker • Python • AWS automation</li>
-          <li class="lh-1-5">Empathy • Team Communication • Scripting</li>
-          <li class="lh-1-5">AppDynamics • Splunk • Elastic • AlertSite</li>
+      <div id="top-columns-middle" class="">
+        <h4 class="mb-0-75 ta-c">I have experience with</h4>
+        <ul class="mt-0 lst-n ta-c p-0">
+          <li class="lh-1-5">AWS • Elastic • AppD • Splunk</li>
+          <li class="lh-1-5">Bash • Python • Ansible • Docker</li>
+          <li class="lh-1-5">JavaScript • Java/Groovy • Scheme</li>
+          <li class="lh-1-5">Español • Game Design • 日本語</li>
         </ul>
-        <!-- <em>Strong:</em> Team Communicaton • JavaScript (ES6) • Pair Programming • Java • Python • Ruby<br> -->
-        <!-- <em>Proficient:</em> C • React/Redux • Test-Driven Dev • Rails • Django • HTML5 • CSS3/SASS • SQL • ORMs • Scheme • Processing<br> -->
-        <!-- <em>Familiar:</em> OpenGL • C++ • Flex &amp; Bison<br> -->
-        <br>
+      </div>
+
+      <div id="top-columns-right" class="">
+        <h4 class="mb-0-75 ta-c">Coworkers say that I</h4>
+        <ul class="mt-0 ml-a w-95">
+          <li>am amicable</li>
+          <li>am helpful</li>
+          <li>improve team workflows</li>
+          <li>have good taste in<br>games, horror &amp; anime</li>
+        </ul>
       </div>
     </div>
 
-    <div id="projects" class="bgc-ddd cl-both clearfix w-95 m-c pb-1">
-      <h3 class="mb-0-75 mt-0-75">Projects</h3>
-      <div class="ta-c">
-        <div class="fl-l ml-2">
-            <img class="--js-add-dynamic" src="/projects/imgs/thumbnails/streamer-static.gif" />
+    <div id="projects-container" class="bgc-ddd w-95 m-c pb-1">
+      <h3 class="ta-c m-0 pt-05 pb-05">Projects</h3>
+      <div id="projects" class="d-g gtc-1-1-1">
+        <div class="ta-c">
+          <img class="--js-add-dynamic" src="/projects/imgs/thumbnails/gol-static.gif" />
+          <h4 class="m-0 pt-05 pb-05">Game of Life</h4>
+          Java implementation of Conway's Game of Life.
         </div>
-        <div class="fl-r mr-2">
-            <img class="--js-add-dynamic" src="/projects/imgs/thumbnails/eclipse-static.gif" />
+        <div class="ta-c">
+          <img class="--js-add-dynamic" src="/projects/imgs/thumbnails/eclipse-static.gif" />
+          <h4 class="m-0 pt-05 pb-05">Mobile Art 1 (Processing)</h4>
+          In sit amet sapien nisl. Integer elementum dapibus lectus consequat egestas. Proin fermentum erat sit amet blandit bibendum. Donec fermentum tellus nunc, ac pulvinar mauris egestas sit amet. Curabitur eros sapien, varius in pretium sit amet, scelerisque non orci. 
         </div>
-        <h4 class="m-0 mb-0-25">Mobile Art</h4>
-        Streamer <span class="c-highlight1">(left)</span> and Eclipse <span class="c-highlight2">(right)</span> were created as part of my exploration into art games and mobile apps.
-      </div>
-      <div class="cl-both"></div>
-      <br>
-      <div class="fl-l w-50 pr-0-15in ta-c">
-        <h4 class="mb-0-25 mt-0">OneShot</h4>
-          <img class="fl-r pl-1 --js-add-dynamic" src="/projects/imgs/thumbnails/oneshot-static.gif" />
-        An item set creator for League of Legends.  Implemented with separate Sinatra and Django backends.
-      </div>
-      <div class="fl-r w-50 pl-0-15in ta-c">
-        <h4 class="mb-0-25 mt-0">Conway's Game of Life</h4>
-          <img class="fl-l pr-1 --js-add-dynamic" src="/projects/imgs/thumbnails/gol-static.gif" />
-        A Java implementation of Conway's Game of Life.  Made while studying cellular automata.
+        <div class="ta-c">
+          <img class="--js-add-dynamic" src="/projects/imgs/thumbnails/streamer-static.gif" />
+          <h4 class="m-0 pt-05 pb-05">Mobile Art 2 (Java)</h4>
+          Nullam in quam sit amet metus fringilla vehicula eu nec diam. Nulla tristique orci ante, sed vehicula nulla ultrices non. Sed augue augue, pretium et lorem sit amet, venenatis lobortis nulla. Ut quam dolor, aliquet sed bibendum quis, vulputate ut ante. Pellentesque varius id felis nec lobortis. Etiam efficitur, odio vitae vulputate faucibus, risus sapien imperdiet elit, a consequat velit purus vel magna. Nullam vel porttitor enim, tincidunt sodales dui. Pellentesque consectetur ornare dictum. Vivamus leo purus, accumsan ac euismod sed, varius posuere eros.
+        </div>
+
       </div>
     </div>
-
-    <div id="experience" class="pos-r w-95 m-c ta-c">
-      <h3 class="mb-0-75 mt-0-75">Experience</h3>
-
-      <h4 class="pos-r mt-0-75 mb-0">Gravity Current - Software Engineer (contract)</h4>
-      <span class="header-date">(February 2016 - present)</span>
-      <span>
-        Help maintain and expand commercial music visualization software.<br>
-        Work with a team on the Synesthesia UI, utilizing JS(ES6)/Webkit/Gulp/React/Redux/SASS.
-      </span>
-
-
-      <h4 class="pos-r mt-0-75 mb-0">Sarah Lawrence College - Computer Science Research Assistant</h4>
-      <span class="header-date">(Summer 2014)</span>
-      <span>
-        Explored mobile/touch interfaces for programming on the go.<br>
-        Managed a small team as we implemented a Scheme programming app for Android.
-      </span>
-      <span class="header-date">(Summer 2013)</span>
-      <span>
-        Created Nao robot API in Python for use by new SLC robotics students.
-      </span>
-    </div>
-
-
-    <div id="education" class="pos-r m-c ta-c">
-      <h3 class="mb-0-75 mt-1">Education</h3>
-
-      <h4 class="pos-r mt-0-75 mb-0">Dev Bootcamp</h4>
-      <span class="header-date">(May-Oct 2015)</span>
-      <span>
-        1,000+ hours coding, creating CRUD apps, pair programming, and engineering empathy.<br>
-        Group projects using Agile development, Rails, JS, HTML/CSS, jQuery, AJAX, Oauth, and Heroku.<br>
-        Emphasized OO principles, MVC design, and strong git workflow.
-      </span>
-
-      <h4 class="pos-r mt-0-75 mb-0">Sarah Lawrence College</h4>
-      <span class="header-date">(2012 - 2015)</span>
-      <span>
-        Graduated with concentrations in Computer Science and Language Studies.<br>
-      </span>
-    </div>
-
 
   </div>
 </div>
