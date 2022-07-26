@@ -1,0 +1,339 @@
+AWSTemplateFormatVersion: 2010-09-09
+
+Parameters:
+  KeyPairName:
+    Type: AWS::EC2::KeyPair::KeyName
+    Default: CPBWebServerKeyPair
+    Description: EC2 KeyPair. Must be created/imported in AWS ahead of CFT deployment.
+  VpcId:
+    Type: AWS::EC2::VPC::Id
+    Default: 'vpc-d2a9a8ab'
+  SubnetIds:
+    Type: List<AWS::EC2::Subnet::Id>
+    Default: 'subnet-4c026635,subnet-2265e369,subnet-c8e09d92,subnet-8a1fe7a1'
+
+Resources:
+
+  WebServerKmsKey:
+    Type: AWS::KMS::Key
+    Properties: 
+      #EnableKeyRotation: Boolean
+      KeyPolicy:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: Enable IAM User Permissions
+            Effect: Allow
+            Principal:
+              AWS: !Sub "arn:aws:iam::${AWS::AccountId}:root"
+            Action: 'kms:*'
+            Resource: '*'
+      Tags: 
+        - Key: Name
+          Value: 'CPBWebServerKmsKey'
+        - Key: app
+          Value: 'CPBWebServer'
+
+  WebServerKmsKeyAlias:
+    Type: AWS::KMS::Alias
+    Properties:
+      AliasName: alias/CPBWebServerKmsKey
+      TargetKeyId: !Ref WebServerKmsKey
+
+  WebServerRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      RoleName: CPBWebServerRole
+      Path: /
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal: { Service: [ ec2.amazonaws.com ] }
+            Action: 'sts:AssumeRole'
+      Policies:
+        - PolicyName: "CPBWebServerPolicy"
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action:
+                  - 'iam:List*'
+                  - 'iam:Get*'
+                  - 'iam:Describe*'
+                  - 'iam:Simulate*'
+                  - 'ec2:AssociateAddress'
+                  - 'ec2:List*'
+                  - 'ec2:Get*'
+                  - 'ec2:Describe*'
+                  - 'autoscaling:Describe*'
+                  - 'autoscaling:CompleteLifecycleAction'
+                  - 'ssm:GetParameter*'
+                Resource: '*'
+              - Effect: Allow
+                Action:
+                  - 'ssmmessages:CreateControlChannel'
+                  - 'ssmmessages:OpenControlChannel'
+                  - 'ssmmessages:CreateDataChannel'
+                  - 'ssmmessages:OpenDataChannel'
+                  - 's3:GetEncryptionConfiguration'
+                Resource: '*'
+              - Effect: Allow
+                Action: 'cloudformation:SignalResource'
+                Resource: '*'
+              - Effect: Allow
+                Action: 'kms:Decrypt'
+                Resource: !GetAtt WebServerKmsKey.Arn
+      ManagedPolicyArns: []
+      Tags: 
+        - Key: Name
+          Value: 'CPBWebServerRole'
+        - Key: app
+          Value: 'CPBWebServer'
+
+  WebServerInstanceProfile:
+    Type: 'AWS::IAM::InstanceProfile'
+    Properties:
+      InstanceProfileName: CPBWebServerInstanceProfile
+      Path: /
+      Roles:
+        - !Ref WebServerRole
+
+  WebServerEIP:
+    Type: 'AWS::EC2::EIP'
+    Properties: {}
+
+  WebServerSecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupName: 'CPBWebServerSecurityGroup'
+      GroupDescription: "SG for CPB web server"
+      VpcId: !Ref VpcId
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          Description: HTTP ingress
+          FromPort: 80
+          ToPort:   80
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          Description: HTTPS ingress
+          FromPort: 443
+          ToPort:   443
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          Description: CPB SSH
+          FromPort: 22
+          ToPort:   22
+          CidrIp: 73.243.67.184/32
+      SecurityGroupEgress:
+        IpProtocol: tcp
+        FromPort: 443
+        ToPort:   443
+        CidrIp: 0.0.0.0/0
+        Description: HTTPS egress
+      Tags:
+        - Key: Name
+          Value: 'CPBWebServerSG'
+        - Key: app
+          Value: 'CPBWebServer'
+
+  WebServerASG:
+    Type: 'AWS::AutoScaling::AutoScalingGroup'
+    Properties:
+      AutoScalingGroupName: CPBWebServerASG
+      VPCZoneIdentifier: !Ref SubnetIds
+      DesiredCapacity: 1
+      MinSize: 1
+      MaxSize: 1
+      LaunchTemplate:
+        LaunchTemplateId: !Ref WebServerLaunchTemplate
+        Version: !GetAtt WebServerLaunchTemplate.LatestVersionNumber
+      Tags:
+        - Key: Name
+          Value: 'CPBWebServer'
+          PropagateAtLaunch: True
+        - Key: app
+          Value: 'CPBWebServer'
+          PropagateAtLaunch: True
+      LifecycleHookSpecificationList:
+        - LifecycleHookName: setup
+          LifecycleTransition: 'autoscaling:EC2_INSTANCE_LAUNCHING'
+          HeartbeatTimeout: 900  #seconds
+    CreationPolicy:
+      ResourceSignal:
+        Count: 1
+        Timeout: PT15M
+    UpdatePolicy:
+      AutoScalingRollingUpdate:  # ReplacingUpdate will not work sharing 1 EIP
+        MaxBatchSize: 1
+        WaitOnResourceSignals: True
+        PauseTime: PT15M
+        SuspendProcesses:
+          - AZRebalance
+          - HealthCheck
+          - ReplaceUnhealthy
+          - ScheduledActions
+  WebServerLaunchTemplate:
+    Type: 'AWS::EC2::LaunchTemplate'
+    DependsOn: WebServerEIP
+    Properties:
+      LaunchTemplateName: CPBWebServerLaunchTemplate
+      LaunchTemplateData:
+        #BlockDeviceMappings: []
+        IamInstanceProfile:
+          Arn: !GetAtt WebServerInstanceProfile.Arn
+        ImageId: "{{resolve:ssm:/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2}}"
+        InstanceType: t3.micro
+        KeyName: !Ref KeyPairName
+        SecurityGroupIds:
+          - !GetAtt WebServerSecurityGroup.GroupId
+        TagSpecifications:
+          - ResourceType: instance
+            Tags:
+              - Key: Name
+                Value: 'CPBWebServerInstance'
+              - Key: app
+                Value: 'CPBWebServer'
+          - ResourceType: volume
+            Tags:
+              - Key: Name
+                Value: 'CPBWebServerVolume'
+              - Key: app
+                Value: 'CPBWebServer'
+        UserData:
+          Fn::Base64: !Sub |
+            Content-Type: multipart/mixed; boundary="//"
+            MIME-Version: 1.0
+      
+            --//
+            Content-Type: text/cloud-config; charset="us-ascii"
+            MIME-Version: 1.0
+            Content-Transfer-Encoding: 7bit
+            Content-Disposition: attachment; filename="cloud-config.txt"
+      
+            #cloud-config
+            cloud_final_modules:
+            - [scripts-user, always]
+      
+            --//
+            Content-Type: text/x-shellscript; charset="us-ascii"
+            MIME-Version: 1.0
+            Content-Transfer-Encoding: 7bit
+            Content-Disposition: attachment; filename="userdata.txt"
+
+            #!/bin/bash
+
+            # https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SSL-on-amazon-linux-2.html#ssl_prereq
+            # https://stackoverflow.com/questions/58626546/shell-script-to-make-site-https-using-certbot-and-nginx
+
+            echo "Waiting for yum lock to clear..."
+            #pkg_out='>/var/log/cloud-init-package-output.log'
+            yum check-update
+
+            echo "Gathering instance data..."
+            METADATA_URL="http://169.254.169.254/latest/meta-data"
+            INSTANCE_ID="$(curl -s $METADATA_URL/instance-id)"
+            INSTANCE_TAGS="$(aws ec2 describe-tags  --region '${AWS::Region}' \
+                                                    --filters "Name=resource-type,Values=instance" \
+                                                             "Name=resource-id,Values='$INSTANCE_ID'" \
+                                                    | jq '.Tags')"
+            INSTANCE_ASG="$(jq -r '.[] | select(.Key == "aws:autoscaling:groupName") | .Value' <<<"$INSTANCE_TAGS")"
+
+            firstrun_file=/var/lib/firstrun
+            if [ ! -f "$firstrun_file" ]; then
+              echo "Running first-time setup..."
+
+              # Elastic IP setup
+              echo "Associating Elastic IP address '${WebServerEIP}' with this instance..."
+              aws ec2 associate-address --region '${AWS::Region}' \
+                                        --allow-reassociation \
+                                        --instance-id "$INSTANCE_ID" \
+                                        --allocation-id '${WebServerEIP.AllocationId}'
+            
+              # Package updates
+              echo "Updating..."
+              amazon-linux-extras install -y epel
+              yum update -y --disableplugin=priorities
+              yum install -y jq httpd certbot python2-certbot-apache mod_ssl
+
+              # SSH config
+              ssh_pub1='ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCuJIhYzRgisztPsPDrr5QHlwlJ4T7GQZAiqYUp9XNh/PyrJi83VlYGFRroiy3CT+Q1A13W8JiqaoKcWv8sZm/TPn2SjHoQ2XG/5deNtLraW2pjc2ZdbdxP3WELDv6OT6cb8LOyagj/zMgrAhz747O2QO2PGk/72+4OIPb1q4NJ5gQaQb69vzEd/+sFj1Y4mT9CVCibNKesIT9Y/GTHJwyPdVcUriYjAlkZJq14RwaZ7g5UHMToHE02Dg71YdxPtn3WK8XBbRB8tpAt0wen50x9WPMZBPkMDVd+1JBK/ThNFauRYZirdnTPTjyQqQ1unuOZpFhpV57FurOjtf2Y9UFg82XpmS9/wXq3oEmxevbHkN/vhegiCPMFzp7TLNCGbAOvoRjyGCO7uIWHD9vpdSsIeo8GAX5vwfSv5ra48u3T2Kp2VdqAPGl+1nwFG0CcsHQs9aAhNqPDZeN/jA6U9YTi5AU68cRokD3+IoRZegyysB58Ja1RFFptWvCoKGm6de6Rr3FwmBzFRa0JaZa8fGDU948xnsoX3FUXTAAhtwN8+sYfmCG1oihiTAOZQzSFyY3ZcmeUIlw6WraLNEvj37NRBt7YFOnTpOoAwDJTa5oCP+KPHPIS9ZeveI+sT4wRfIvU3QuSAkuI/FzZhoDLQU6rliXMX36xjCNoNODiTvEYyw== cameron.basham@gmail.com'
+              ssh_pub2='ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCsWAAJahl/Rzvti1iBoTA1p6UoRHh3Cm3a2zfucz6+z02tQ+tYiXlnEryYhPctj2xwUW3ofIsgKBBMs24BVZ92eAKAXE527bOpPa1pvfYGdrVvIpdhdddXHdjNzpTXKhvo7c+/uUd9Glrs3o3UTu31R9MhhzbDmVYm9bVDnBB6q+4ROTHbR6uM1NRFbFYj8m9sDeqh7h0DuQmznYuhIekAwu1Vn8nzrqxe6+g8o6hXDWpb6wjojpuaw3c36yYByNxckAHf7iUNpZRbPilr8Bxyo9yKD8QLg/5o1buJNXZA5ma0O/u6DBd6SQVdAX/IYl9q2CzjgKosLBV4iKNoZCS3 cameronbasham@Camerons-MacBook-Pro.local'
+              mkdir -p /home/ec2-user/.ssh
+              echo "$ssh_pub1"  > /home/ec2-user/.ssh/authorized_keys
+              echo "$ssh_pub2" >> /home/ec2-user/.ssh/authorized_keys
+              chown -R ec2-user /home/ec2-user
+
+              # httpd config
+              systemctl start httpd
+              systemctl enable httpd
+              httpd_domain='cameronbasham.com'
+              cat >>/etc/httpd/conf/httpd.conf <<EOF
+            
+            <VirtualHost *:80>
+              DocumentRoot "/var/www/html"
+              ServerName "$httpd_domain"
+              ServerAlias "www.$httpd_domain"
+            </VirtualHost>
+            
+            EOF
+              #printf "%s\n" '' \
+              #              '<VirtualHost *:80>' \
+              #              '  DocumentRoot "/var/www/html"' \
+              #              "  ServerName \"$httpd_domain\"" \
+              #              "  ServerAlias \"www.$httpd_domain\"" \
+              #              '</VirtualHost>' >> /etc/httpd/conf/httpd.conf
+              web_dir='/var/www/html'
+              mkdir -p "$web_dir"
+
+              # Site content
+              web_file="$web_dir/index.html"
+              web_contents="<html><h1>We&#39;re gonna be alright</h1></html>"
+              echo "$web_contents" > "$web_file"
+              chown ec2-user "$web_file"
+              chmod -R o+r "$web_dir"
+              systemctl restart httpd
+
+              # TLS/HTTPS setup
+              [ -z "$HOME" ] && export HOME=/root
+              #keyfile='/etc/pki/tls/private/cpb.key'
+              #openssl genrsa -out "$keyfile" 4096
+              #chown root:root "$keyfile"
+              #chmod 600 "$keyfile"
+
+            #  csrfile='/etc/pki/tls/private/cpb.pem'
+            #  subj="/C=US/ST=Colorado/L=Aurora/O=Clambordan/CN=$httpd_domain"
+            #  req_conf="$(cat <<EOF
+            #[req]
+            #distinguished_name=req
+            #[SAN]
+            #subjectAltName=DNS:$httpd_domain,DNS:www.$httpd_domain
+            #EOF)"
+              #openssl req -new -key "$keyfile" \
+              #                 -out "$csrfile" \
+              #                 -subj "$subj" \
+              #                 -reqexts SAN -extensions SAN \
+              #                 -config <(echo "$req_conf")
+              certbot run -n --apache \
+                             --agree-tos \
+                             --redirect \
+                             -d "$httpd_domain" \
+                             -d "www.$httpd_domain" \
+                             -m cameron.basham+web@gmail.com
+              systemctl restart httpd
+
+              echo 'Rebooting...'
+              touch "$firstrun_file" 
+              systemctl reboot
+            else
+              echo "Signaling stack & lifecycle success..."
+              /opt/aws/bin/cfn-signal --region '${AWS::Region}' \
+                                      -e 0 \
+                                      --stack '${AWS::StackName}' \
+                                      --resource WebServerASG
+              aws autoscaling complete-lifecycle-action --region '${AWS::Region}' \
+                                                        --lifecycle-action-result CONTINUE \
+                                                        --lifecycle-hook-name setup \
+                                                        --auto-scaling-group-name "$INSTANCE_ASG" \
+                                                        --instance-id "$INSTANCE_ID"
+            fi
+            --//
