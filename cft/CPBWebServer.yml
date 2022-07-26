@@ -67,6 +67,7 @@ Resources:
                   - 'ec2:Describe*'
                   - 'autoscaling:Describe*'
                   - 'autoscaling:CompleteLifecycleAction'
+                  - 'autoscaling:StartInstanceRefresh'
                   - 'ssm:GetParameter*'
                 Resource: '*'
               - Effect: Allow
